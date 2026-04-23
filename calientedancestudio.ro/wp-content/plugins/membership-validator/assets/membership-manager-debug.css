@@ -1,0 +1,247 @@
+/**
+ * Membership Manager - Debug Tab Styles
+ * 
+ * Stilizare profesională pentru pagina de debug
+ * 
+ * @package MembershipValidatorCore
+ * @since 2.0.0
+ */
+
+/* ===================================================================
+   Debug Container & Layout
+   =================================================================== */
+
+.oc-debug-container { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    margin: 20px 0; 
+}
+
+/* ===================================================================
+   Info & Warning Boxes
+   =================================================================== */
+
+.oc-debug-info-box { 
+    background: #d1ecf1; 
+    border: 1px solid #bee5eb; 
+    border-radius: 5px; 
+    padding: 15px; 
+    margin: 20px 0; 
+}
+
+.oc-debug-warning-box { 
+    background: #fff3cd; 
+    border: 1px solid #ffeaa7; 
+    border-radius: 5px; 
+    padding: 15px; 
+    margin: 20px 0; 
+}
+
+.oc-debug-highlight { 
+    background: #f39c12; 
+    color: white; 
+    padding: 2px 6px; 
+    border-radius: 3px; 
+}
+
+/* ===================================================================
+   Stats Grid
+   =================================================================== */
+
+.oc-debug-stats { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+    margin: 20px 0; 
+}
+
+.oc-debug-stat-card { 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    color: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    text-align: center; 
+}
+
+.oc-debug-stat-number { 
+    font-size: 2em; 
+    font-weight: bold; 
+    display: block; 
+}
+
+/* ===================================================================
+   Test Sections - Containere pentru fiecare test
+   =================================================================== */
+
+.test-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.test-section h2 {
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #667eea;
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.test-section h2 .icon {
+    font-size: 24px;
+}
+
+/* ===================================================================
+   Tables - Stilizare Profesională
+   =================================================================== */
+
+.test-section table,
+.oc-debug-table { 
+    width: 100%; 
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e1e8ed;
+}
+
+.test-section table th,
+.test-section table td,
+.oc-debug-table th, 
+.oc-debug-table td { 
+    padding: 14px 16px;
+    text-align: left; 
+    font-size: 14px;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.test-section table th,
+.oc-debug-table th { 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.test-section table tbody tr:nth-child(even),
+.oc-debug-table tbody tr:nth-child(even) { 
+    background: #f8f9fa; 
+}
+
+.test-section table tbody tr:hover,
+.oc-debug-table tbody tr:hover { 
+    background: #e8f4f8;
+    transition: background 0.2s ease;
+}
+
+.test-section table tr:last-child td,
+.oc-debug-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===================================================================
+   Status Badges & Icons
+   =================================================================== */
+
+.test-section .status-ok,
+.test-section .status-yes {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.test-section .status-error,
+.test-section .status-no {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.test-section .status-warning {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+/* ===================================================================
+   Alert Boxes
+   =================================================================== */
+
+.success-box {
+    background: #d1f4e0;
+    border-left: 4px solid #10b981;
+    padding: 12px 16px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.error-box {
+    background: #fee2e2;
+    border-left: 4px solid #ef4444;
+    padding: 12px 16px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.warning-box {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 12px 16px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+/* ===================================================================
+   Code Blocks
+   =================================================================== */
+
+.code-block {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 16px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+/* ===================================================================
+   Admin Cards Grid
+   =================================================================== */
+
+.oc-admin-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    margin-top: 20px; 
+}
+
+.oc-admin-card { 
+    background: #fff; 
+    border: 1px solid #ccd0d4; 
+    border-radius: 4px; 
+    padding: 20px; 
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04); 
+}
+
+.oc-admin-card h3 { 
+    margin-top: 0; 
+    color: #23282d; 
+}
+
+.oc-admin-card p { 
+    color: #646970; 
+    margin-bottom: 15px; 
+}
+

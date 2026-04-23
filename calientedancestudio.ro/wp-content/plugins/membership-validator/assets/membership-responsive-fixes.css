@@ -1,0 +1,1329 @@
+/**
+ * Membership Responsive Fixes
+ * Fix-uri pentru pagina de test și mobile-friendly
+ * 
+ * @package MembershipValidator
+ * @since 1.4.0
+ */
+
+/* ========================================
+   🎯 FIX 1: TEXT TRUNCHIAT în Card Header
+   ======================================== */
+
+/* Asigură că titlurile nu se trunchiază */
+.oc-membership-card .oc-card-header h3,
+.oc-membership-card .oc-card-header .oc-user-info {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+}
+
+/* Fix pentru textele din package summary */
+.package-header h2,
+.package-meta span {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Fix pentru liste de cursuri în card summary */
+.oc-membership-card .course-list,
+.oc-membership-card .package-meta {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+/* ========================================
+   🎯 FIX 2: BUTON QR ASCUNS SUB MARGINE
+   ======================================== */
+
+/* Asigură că QR section nu overflow-uiește */
+.oc-qr-section {
+    margin-top: 15px !important;
+    padding-top: 15px !important;
+    border-top: 1px solid var(--oc-border-color, #e0e0e0) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* QR Preview Container - ajustare pentru mobile */
+.oc-qr-preview-container {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto !important;
+}
+
+/* QR Button - full width și vizibil */
+.oc-btn-show-qr {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+/* Asigură că cardul nu are overflow ascuns */
+.oc-course-card,
+.oc-membership-card {
+    overflow: visible !important;
+}
+
+/* ========================================
+   🎯 FIX 3: LAYOUT GENERAL RESPONSIVE
+   ======================================== */
+
+/* Container principal - padding corect pe mobile */
+.oc-membership-dashboard {
+    max-width: 100% !important;
+    padding: 15px !important;
+    box-sizing: border-box !important;
+}
+
+/* Package Card responsive */
+.oc-package-card {
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* Courses Grid - responsive columns */
+.oc-courses-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* ========================================
+   🎯 FIX 3.5: COMPACT COURSE LIST - Lizibilitate Garantată
+   ======================================== */
+
+/* CRITIC: Garantează că numele cursurilor din lista compactă sunt lizibile */
+.oc-course-compact-item {
+    min-width: 200px !important; /* Minim pentru a vedea numele complet */
+    white-space: nowrap !important; /* Forțează o singură linie, fără wrapping */
+    flex-shrink: 0 !important; /* NU permite comprimarea */
+}
+
+/* CRITIC FIX: Container flex cu wrap pentru Abonament și Valabil până */
+.oc-membership-info {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Permite să curgă una sub alta */
+    gap: 10px !important;
+    align-items: flex-start !important;
+}
+
+/* CRITIC FIX: Min-width pentru subscription type și validity info */
+.oc-subscription-type,
+.oc-validity-info {
+    min-width: 170px !important; /* Minim pentru lizibilitate */
+    flex-shrink: 0 !important; /* NU permite comprimarea */
+}
+
+/* Pe mobile, reduce minimal dar menține lizibilitate */
+@media (max-width: 768px) {
+    .oc-course-compact-item {
+        min-width: 180px !important;
+    }
+    
+    .oc-subscription-type,
+    .oc-validity-info {
+        min-width: 120px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 4: AUTO-SCROLL HAOTIC
+   ======================================== */
+
+/* Previne scroll haotic cauzat de animații sau layout shifts */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Asigură că body-ul nu overflow-uiește */
+body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+/* Previne layout shifts la load */
+.oc-membership-dashboard * {
+    box-sizing: border-box !important;
+}
+
+/* Disable animații care pot cauza jump-uri */
+.oc-course-card,
+.oc-membership-card {
+    will-change: auto !important;
+}
+
+/* ========================================
+   🎯 FIX 5: MOBILE FIRST (max-width: 768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Container padding redus pe mobile */
+    .oc-membership-dashboard {
+        padding: 10px !important;
+    }
+    
+    /* Package Card mai compact */
+    .oc-package-card {
+        padding: 15px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Package Header - vertical layout */
+    .package-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+    
+    /* Package Price - mai mic pe mobile */
+    .package-price {
+        font-size: 20px !important;
+        padding: 6px 12px !important;
+    }
+    
+    /* Package Meta - vertical stack */
+    .package-meta {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+    
+    /* Courses Grid - 1 coloană pe mobile */
+    .oc-courses-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    /* Course Card - padding redus */
+    .oc-course-card,
+    .oc-membership-card {
+        padding: 15px !important;
+    }
+    
+    /* Course Name - font mai mic */
+    .course-name strong {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Sessions - font mai mic */
+    .sessions-remaining {
+        font-size: 28px !important;
+    }
+    
+    .sessions-total {
+        font-size: 20px !important;
+    }
+    
+    /* QR Preview mai mic pe mobile */
+    .oc-qr-preview-container {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    /* QR Button text mai mic */
+    .oc-btn-show-qr {
+        font-size: 13px !important;
+        padding: 10px 16px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 6: VERY SMALL MOBILE (max-width: 480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    /* Padding minimal */
+    .oc-membership-dashboard {
+        padding: 8px !important;
+    }
+    
+    /* Package Card ultra-compact */
+    .oc-package-card {
+        padding: 12px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    /* Package Header title mai mic */
+    .package-header h2 {
+        font-size: 18px !important;
+    }
+    
+    /* Package Price mai mic */
+    .package-price {
+        font-size: 18px !important;
+        padding: 5px 10px !important;
+    }
+    
+    /* Course Card minimal padding */
+    .oc-course-card,
+    .oc-membership-card {
+        padding: 12px !important;
+    }
+    
+    /* Course Name foarte compact */
+    .course-name {
+        gap: 6px !important;
+        padding-bottom: 10px !important;
+    }
+    
+    .course-name strong {
+        font-size: 13px !important;
+    }
+    
+    .course-icon {
+        font-size: 24px !important;
+    }
+    
+    /* Sessions ultra-compact */
+    .sessions-remaining {
+        font-size: 24px !important;
+    }
+    
+    .sessions-total,
+    .sessions-separator {
+        font-size: 18px !important;
+    }
+    
+    /* QR Preview foarte mic */
+    .oc-qr-preview-container {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    /* QR Button compact */
+    .oc-btn-show-qr {
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 7: QR MODAL RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Modal full screen pe mobile */
+    .oc-qr-modal {
+        padding: 0 !important;
+    }
+    
+    .oc-qr-modal-content {
+        max-width: 100% !important;
+        max-height: 100% !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+    }
+    
+    /* QR Image mai mare pe mobile */
+    .oc-qr-image {
+        max-width: 280px !important;
+        width: 90% !important;
+    }
+    
+    /* Info Grid vertical pe mobile */
+    .oc-qr-info-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Modal Padding redus */
+    .oc-qr-modal-header,
+    .oc-qr-modal-body {
+        padding: 20px !important;
+    }
+    
+    /* Close button mai mare pe mobile */
+    .oc-qr-modal-close {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 28px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 8: OVERFLOW HORIZONTAL PREVENTION
+   ======================================== */
+
+/* Previne overflow horizontal pe toate elementele */
+* {
+    max-width: 100% !important;
+}
+
+/* Exception pentru elemente care trebuie să fie mai mari */
+.oc-qr-image,
+.oc-qr-preview-img {
+    max-width: none !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Asigură că containerele principale nu overflow-uiesc */
+.oc-membership-dashboard,
+.oc-package-card,
+.oc-courses-grid,
+.oc-course-card,
+.oc-membership-card {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* ========================================
+   🎯 FIX 9: LANDSCAPE MOBILE SUPPORT
+   ======================================== */
+
+@media (max-width: 900px) and (orientation: landscape) {
+    /* În landscape, permite 2 coloane dacă e loc */
+    .oc-courses-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)) !important;
+    }
+    
+    /* Package Header horizontal în landscape */
+    .package-header {
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 10: TOUCH TARGETS (ACCESSIBILITY)
+   ======================================== */
+
+/* Minimum touch target size pentru mobile */
+@media (max-width: 768px) {
+    .oc-btn-show-qr,
+    .oc-qr-modal-close {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    /* Course Cards clickable cu target size ok */
+    .oc-course-card,
+    .oc-membership-card {
+        min-height: 44px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 11: SMOOTH SCROLLING & NO JUMPS
+   ======================================== */
+
+/* Scroll container cu smooth scroll */
+.oc-membership-dashboard {
+    scroll-behavior: smooth !important;
+    overflow-anchor: auto !important;
+}
+
+/* Previne layout shifts cauzate de imagini */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Asigură că toate elementele au dimensiuni stabile */
+.oc-course-card,
+.oc-membership-card {
+    contain: layout !important;
+}
+
+/* ========================================
+   🎯 FIX 12: BUTOANE TRUNCHIATE ÎN ADMIN TABLE
+   ======================================== */
+
+/* Container principal - asigură width complet */
+.oc-admin-cards-container {
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 98% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}
+
+/* Card principal - conținut INTERN, NU iese peste alte carduri */
+.oc-admin-card {
+    overflow: hidden !important; /* CONȚINE elementele în card */
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 20px !important; /* Mai mult spațiu între carduri */
+    padding-bottom: 10px !important; /* Spațiu pentru elementele care wrap */
+}
+
+/* Mobile: 98% width cu marje egale */
+@media (max-width: 768px) {
+    .oc-admin-card {
+        width: 98% !important;
+        margin-left: 1% !important;
+        margin-right: 1% !important;
+    }
+}
+
+/* Card header - permite wrap INTERN, nu overflow EXTERN */
+.oc-admin-card .oc-card-header {
+    position: relative !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 15px !important;
+    min-height: fit-content !important; /* Înălțime automată pentru conținut */
+}
+
+/* FIX TEXT OVERFLOW - toate textele să facă wrap, NU truncate + MIN-WIDTH pentru lizibilitate */
+.oc-member-name,
+.oc-member-email,
+.oc-subscription-type,
+.oc-course-variation,
+.oc-start-date-info {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    text-overflow: clip !important;
+    min-width: 150px !important; /* Garantează lizibilitate */
+    max-width: 100% !important; /* NU iese din container */
+}
+
+/* Nume și email - min-width mai mare */
+.oc-member-name,
+.oc-member-email {
+    min-width: 180px !important;
+    max-width: 100% !important;
+}
+
+/* Cursuri inline - TOATE STYLES (nu mai sunt inline în PHP) */
+.oc-courses-compact-list {
+    margin-top: 10px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Course compact items - COMPLETE STYLES RESPONSIVE */
+.oc-course-compact-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 5px 10px !important;
+    background: #f8f9fa !important;
+    border-left: 3px solid #28a745 !important; /* Default verde, suprascris de inline style border-left-color */
+    border-radius: 4px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important; /* Textul din FIECARE ITEM nu se rupe */
+    min-width: 240px !important; /* REDUS de la 280px pentru a încăpea pe 360px */
+    width: fit-content !important; /* Se extinde cât e nevoie pentru conținut */
+    max-width: 100% !important; /* NU depășește containerul */
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Course name - bold, COMPLET VIZIBIL */
+.oc-course-name {
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* Course sessions - gray color */
+.oc-course-sessions {
+    color: #666 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* Pe mobile, reduce min-width progresiv */
+@media (max-width: 768px) {
+    .oc-course-compact-item {
+        min-width: 200px !important;
+        font-size: 11px !important;
+        padding: 4px 9px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-course-compact-item {
+        min-width: 160px !important; /* Mic dar lizibil pe 360px */
+        font-size: 10px !important;
+        padding: 4px 8px !important;
+        gap: 4px !important;
+    }
+    
+    .oc-courses-compact-list {
+        gap: 6px !important;
+    }
+}
+
+/* Ecrane FOARTE mici (< 360px) */
+@media (max-width: 360px) {
+    .oc-course-compact-item {
+        min-width: 140px !important;
+        font-size: 9px !important;
+        padding: 3px 6px !important;
+    }
+    
+    .oc-courses-compact-list {
+        gap: 4px !important;
+    }
+}
+
+/* Container principal actions - asigură spațiu pentru badge + butoane */
+.oc-card-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-end !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Status badges - min-width pentru lizibilitate */
+.oc-status-badge,
+span[class*="status-"] {
+    min-width: 80px !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Container butoane - asigură suficient spațiu */
+.oc-action-buttons {
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Butoane - asigură text complet vizibil, MAI COMPACTE */
+.oc-btn-info:not([style*="display: none"]),
+.oc-btn-validate:not([style*="display: none"]),
+.oc-btn-qr:not([style*="display: none"]) {
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+    min-width: fit-content !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    line-height: 1.2 !important;
+}
+
+/* Asigură că dashicons nu forțează truncarea */
+.oc-btn .dashicons {
+    flex-shrink: 0 !important;
+    margin-right: 0 !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Card summary - container principal cu info + butoane */
+.oc-admin-card .oc-card-summary {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Permite wrap pe mobile */
+    gap: 15px !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Partea stângă a cardului (info user + abonament) - ELIBERARE max-width cu SPECIFICITATE MAXIMĂ */
+.oc-admin-card .oc-card-summary > div:first-child,
+.oc-admin-card .oc-card-main-info,
+.oc-card-main-info {
+    flex: 1 1 auto !important;
+    min-width: 300px !important; /* Garantează lizibilitate pentru nume + email + abonament */
+    max-width: 100% !important; /* FORȚEAZĂ 100% în loc de none pentru compatibilitate */
+}
+
+/* Membership info container - RESETEZ min-width pentru a permite flexbox să extindă */
+.oc-membership-info {
+    flex: 1 1 100% !important; /* Forțează flexbox să ia tot spațiul disponibil */
+    min-width: 0 !important; /* CRITIC: Resetează min-width pentru flexbox */
+    max-width: 100% !important;
+}
+
+/* Validity info - RESETEZ min-width pentru flexbox */
+.oc-validity-info {
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Member identity container + FORCE width 100% */
+.oc-member-identity {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Partea dreaptă (actions) - GARANTEAZĂ că NU se comprimă și e vizibilă */
+.oc-admin-card .oc-card-summary .oc-card-actions {
+    flex: 0 0 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+}
+
+/* Mobile: ajustează min-width-uri */
+@media (max-width: 768px) {
+    .oc-admin-card .oc-card-summary > div:first-child,
+    .oc-card-main-info {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Pe ecrane medii (tablet), ajustări pentru spațiu */
+@media (max-width: 1024px) {
+    /* Reduce lățimea părții drepte pentru a face loc */
+    .oc-admin-card .oc-card-summary .oc-card-actions {
+        flex: 0 0 180px !important;
+        min-width: 180px !important;
+        max-width: 180px !important;
+    }
+    
+    .oc-admin-card .oc-card-summary > div:first-child,
+    .oc-card-main-info {
+        max-width: calc(100% - 200px) !important;
+    }
+}
+
+/* Pe mobile, layout vertical pentru tot cardul */
+@media (max-width: 768px) {
+    /* Card layout vertical pe mobile */
+    .oc-admin-card .oc-card-summary {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    /* Partea stângă full width pe mobile */
+    .oc-admin-card .oc-card-summary > div:first-child,
+    .oc-card-main-info {
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+    
+    /* Actions la lățime completă pe mobile */
+    .oc-card-actions {
+        width: 100% !important;
+        align-items: stretch !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 auto !important;
+    }
+    
+    /* Butoanele pe o singură linie pe mobile */
+    .oc-action-buttons {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+    
+    .oc-btn-info:not([style*="display: none"]),
+    .oc-btn-validate:not([style*="display: none"]),
+    .oc-btn-qr:not([style*="display: none"]) {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        justify-content: center !important;
+        font-size: 11px !important;
+        padding: 6px 4px !important;
+    }
+}
+
+/* FIX DETAILED CARD - toate elementele responsive */
+.oc-card-details {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+.oc-admin-form {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Form rows - responsive grid cu MIN-WIDTH garantat */
+.oc-form-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+}
+
+.oc-form-row > div {
+    flex: 1 1 calc(50% - 10px) !important;
+    min-width: 250px !important; /* Garantează lizibilitate pentru labels + inputs */
+    box-sizing: border-box !important;
+}
+
+/* Pe ecrane foarte mici, reduce dar păstrează lizibil */
+@media (max-width: 480px) {
+    .oc-form-row > div {
+        min-width: 200px !important;
+    }
+}
+
+/* Grid-uri 4 coloane (sessions info) - responsive cu MIN-WIDTH */
+div[style*="grid-template-columns: repeat(4, 1fr)"] {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+}
+
+/* Coloanele din grid - min-width pentru lizibilitate */
+div[style*="grid-template-columns: repeat(4, 1fr)"] > div {
+    min-width: 70px !important; /* Garantează că "Incluse", "Rămase" etc. se citesc */
+    box-sizing: border-box !important;
+}
+
+/* Package sections - responsive */
+.oc-package-section,
+.oc-courses-expandedlist,
+.oc-active-courses-section {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+/* Package header (title + cancel button) */
+.oc-package-section > h4 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+/* Cancel package button - asigură vizibilitate */
+.oc-btn-cancel-package {
+    white-space: nowrap !important;
+    overflow: visible !important;
+    flex-shrink: 0 !important;
+    min-width: fit-content !important;
+}
+
+/* Mobile: Cancel button pe linie separată */
+@media (max-width: 768px) {
+    .oc-package-section > h4 {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .oc-btn-cancel-package:not([style*="display: none"]) {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+
+.oc-course-entry {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    min-width: 280px !important; /* Garantează lizibilitate completă */
+}
+
+/* Course entry header - responsive flex cu MIN-WIDTH */
+.oc-course-entry > div:first-child {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    align-items: center !important;
+}
+
+/* Course name labels - min-width */
+.oc-course-entry label,
+.oc-course-label {
+    min-width: 150px !important;
+}
+
+/* Mobile: reduce min-width pentru course entry */
+@media (max-width: 480px) {
+    .oc-course-entry {
+        min-width: 250px !important;
+    }
+}
+
+/* Input fields și select-uri - toate responsive cu MIN-WIDTH */
+.oc-field-editable,
+.oc-field-readonly,
+.oc-admin-form .oc-form-group input:not([type="radio"]):not([type="checkbox"]),
+.oc-admin-form .oc-form-group select,
+.oc-admin-form .oc-form-group textarea,
+.select_container,
+.select_container select {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 120px !important; /* Garantează lizibilitate */
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+/* Input-uri pentru numere (sessions) - min-width mai mic */
+.oc-admin-form input[type="number"] {
+    min-width: 60px !important;
+}
+
+/* Labels - word wrap cu min-width (doar labels de field, nu labels de curs/radio) */
+.oc-admin-form .oc-form-group > label {
+    display: flex !important;
+}
+.oc-course-label,
+.oc-session-label {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    min-width: 80px !important;
+}
+
+/* Mobile: reduce min-width pentru inputs */
+@media (max-width: 480px) {
+    .oc-field-editable,
+    .oc-field-readonly,
+    .oc-admin-form .oc-form-group input:not([type="radio"]):not([type="checkbox"]),
+    .oc-admin-form .oc-form-group select,
+    .oc-admin-form .oc-form-group textarea {
+        min-width: 100px !important;
+    }
+}
+
+/* Mobile: form rows vertical */
+@media (max-width: 768px) {
+    .oc-form-row > div {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }
+    
+    /* Grid 4 col → 2 col pe mobile */
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Package section padding redus pe mobile */
+    .oc-package-section,
+    .oc-courses-expandedlist {
+        padding: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Grid 4 col → 1 col pe ecrane mici */
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* FIX BUTOANE LA EXPANDARE (Detailed Card View) */
+.oc-form-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+    overflow: visible !important;
+    padding: 15px 0 !important;
+}
+
+/* Toate butoanele din form actions - responsive */
+.oc-btn:not([style*="display: none"]),
+.oc-btn-edit:not([style*="display: none"]),
+.oc-btn-add-subscription:not([style*="display: none"]),
+.oc-btn-save-member:not([style*="display: none"]),
+.oc-btn-create-order:not([style*="display: none"]),
+.oc-btn-cancel-edit:not([style*="display: none"]),
+.oc-btn-cancel-membership:not([style*="display: none"]),
+.oc-btn-secondary:not([style*="display: none"]),
+.oc-btn-success:not([style*="display: none"]),
+.oc-btn-primary:not([style*="display: none"]),
+.oc-btn-warning:not([style*="display: none"]),
+.oc-btn-danger:not([style*="display: none"]) {
+    white-space: nowrap !important;
+    overflow: visible !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    min-width: fit-content !important;
+}
+
+/* RESPECTĂ display: none din JavaScript/inline styles */
+.oc-btn[style*="display: none"],
+.oc-form-actions button[style*="display: none"] {
+    display: none !important;
+}
+
+/* Mobile: butoane full width sau wrap */
+@media (max-width: 768px) {
+    .oc-form-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    /* Doar butoanele VIZIBILE, NU cele cu display: none */
+    .oc-form-actions .oc-btn:not([style*="display: none"]) {
+        width: 100% !important;
+        justify-content: center !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* Pe ecrane foarte mici, butoane mai compacte */
+@media (max-width: 480px) {
+    .oc-btn-info:not([style*="display: none"]),
+    .oc-btn-validate:not([style*="display: none"]),
+    .oc-btn-qr:not([style*="display: none"]) {
+        font-size: 11px !important;
+        padding: 5px 6px !important;
+        min-width: 70px !important;
+    }
+    
+    .oc-btn:not([style*="display: none"]) .dashicons {
+        margin-right: 2px !important;
+        font-size: 14px !important;
+    }
+    
+    .oc-form-actions .oc-btn:not([style*="display: none"]) {
+        font-size: 13px !important;
+        padding: 10px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 13: PACKAGE SECTIONS INLINE STYLES OVERRIDE
+   ======================================== */
+
+/* Package sections cu inline styles - FORȚEAZĂ responsive */
+.oc-package-section[style] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Package header flex cu inline styles */
+.oc-package-section > div[style*="display: flex"] {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+/* Grid 4 coloane cu CLASĂ CSS - CRITICAL FIX pentru "Incluse, Rămase, Folosite, Validare" */
+.oc-course-stats-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+}
+
+/* Mobile: 2 coloane pentru statistici cursuri */
+@media (max-width: 768px) {
+    .oc-course-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+}
+
+/* Ecrane foarte mici: 1 coloană */
+@media (max-width: 480px) {
+    .oc-course-stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+}
+
+/* BACKUP: Inline styles override (dacă clasa nu funcționează) */
+div[style*="display: grid"][style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+}
+
+@media (max-width: 768px) {
+    div[style*="display: grid"][style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    div[style*="display: grid"][style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+}
+
+/* Coloanele din grid inline - asigură lizibilitate */
+div[style*="grid-template-columns"] > div {
+    min-width: 0 !important; /* Permite grid să funcționeze corect */
+    overflow-wrap: break-word !important;
+}
+
+/* Labels din grid (Incluse, Rămase, etc.) */
+div[style*="grid-template-columns"] > div > label,
+div[style*="grid-template-columns"] > div > div:first-child {
+    font-size: 10px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* Valorile din grid (8, 0, etc.) */
+div[style*="grid-template-columns"] > div > div:last-child {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+/* Mobile: valori mai mici */
+@media (max-width: 480px) {
+    div[style*="grid-template-columns"] > div > div:last-child {
+        font-size: 16px !important; /* Mai mari pe mobil pentru lizibilitate */
+    }
+}
+
+/* ========================================
+   🎯 FIX 14: COURSE ENTRY RESPONSIVE
+   ======================================== */
+
+/* Course entry cu inline styles - responsive */
+.oc-course-entry[style] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+/* Course entry header cu flex inline */
+.oc-course-entry > div[style*="display: flex"] {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+}
+
+/* Course labels - asigură wrap */
+.oc-course-entry label[style],
+.oc-course-entry > div > div > label {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    min-width: 120px !important;
+    max-width: 100% !important;
+}
+
+/* Status badges în course entry */
+.oc-course-entry span[style*="background"],
+.oc-course-entry span[style*="padding"] {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* Mobile: course entry vertical layout */
+@media (max-width: 768px) {
+    .oc-course-entry > div[style*="display: flex"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 15: PACKAGE HEADER RESPONSIVE
+   ======================================== */
+
+/* Package header title + status */
+.oc-package-section > div[style*="justify-content: space-between"] {
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+}
+
+/* Package title h4 */
+.oc-package-section h4[style] {
+    flex: 1 1 auto !important;
+    min-width: 200px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Status badge în package header */
+.oc-package-section span[style*="padding: 6px"] {
+    flex-shrink: 0 !important;
+    min-width: fit-content !important;
+}
+
+/* Mobile: package header vertical */
+@media (max-width: 768px) {
+    .oc-package-section > div[style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .oc-package-section h4[style] {
+        min-width: 100% !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 16: OVERFLOW PREVENTION PE TOATE INLINE STYLES
+   ======================================== */
+
+/* TOATE elementele cu inline styles - overflow prevention */
+*[style*="display: flex"],
+*[style*="display: grid"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Text overflow prevention pentru TOATE elementele cu inline styles */
+*[style*="font-size"],
+*[style*="font-weight"] {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Padding și margin responsive pentru inline styles */
+@media (max-width: 768px) {
+    *[style*="padding: 15px"],
+    *[style*="padding: 20px"] {
+        padding: 10px !important;
+    }
+    
+    *[style*="margin-bottom: 20px"] {
+        margin-bottom: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    *[style*="padding: 15px"],
+    *[style*="padding: 20px"],
+    *[style*="padding: 12px"] {
+        padding: 8px !important;
+    }
+    
+    *[style*="margin-bottom: 20px"],
+    *[style*="margin-bottom: 15px"] {
+        margin-bottom: 10px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 17: SPECIFIC FIX PENTRU CARDURI DIN IMAGINI
+   ======================================== */
+
+/* Card header main - exact din imaginile tale */
+.oc-card-main-info,
+.oc-member-identity {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Member name - exact din imagine "Lazar Remus" */
+.oc-member-name {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+}
+
+/* Subscription type - exact din imagine "ABONAMENT CALIENTE 8H - 8 ORE" */
+.oc-subscription-type {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+/* Course compact items list - exact din imagine */
+.oc-courses-compact-list {
+    overflow-x: auto !important; /* Permite scroll horizontal dacă e necesar */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scroll pe iOS */
+    scrollbar-width: thin !important;
+}
+
+/* Mobile: reduce min-width pentru course compact items */
+@media (max-width: 768px) {
+    .oc-course-compact-item {
+        min-width: 200px !important; /* Reduce de la 280px */
+        font-size: 11px !important;
+    }
+    
+    .oc-member-name {
+        font-size: 14px !important;
+    }
+    
+    .oc-subscription-type {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-course-compact-item {
+        min-width: 180px !important; /* Și mai mic pe ecrane foarte mici */
+        font-size: 10px !important;
+        padding: 4px 8px !important;
+    }
+    
+    .oc-member-name {
+        font-size: 13px !important;
+    }
+    
+    .oc-subscription-type {
+        font-size: 11px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 18: BORDERED SECTIONS OVERFLOW
+   ======================================== */
+
+/* Sections cu borduri (verde, albastru) - exact din imagini */
+.oc-package-section[style*="border: 2px solid"],
+div[style*="border: 2px solid"] {
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+}
+
+/* Padding pentru sections cu borduri */
+@media (max-width: 768px) {
+    .oc-package-section[style*="padding: 15px"],
+    div[style*="padding: 15px"] {
+        padding: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-package-section[style*="padding: 15px"],
+    div[style*="padding: 15px"] {
+        padding: 10px !important;
+    }
+}
+
+/* ========================================
+   🎯 FIX 19: PRINT MEDIA (BONUS)
+   ======================================== */
+
+@media print {
+    /* Ascunde butoane în print */
+    .oc-btn-show-qr,
+    .oc-qr-modal {
+        display: none !important;
+    }
+    
+    /* QR Preview vizibil în print */
+    .oc-qr-preview-container {
+        page-break-inside: avoid !important;
+    }
+    
+    /* Cards nu se întrerup între pagini */
+    .oc-course-card,
+    .oc-membership-card {
+        page-break-inside: avoid !important;
+    }
+}
+

@@ -1,0 +1,3646 @@
+/**
+ * EMERGENCY MOBILE FIX
+ * Override TOATE inline styles care blochează responsive
+ * 
+ * @package MembershipValidator
+ * @since 1.4.1
+ */
+
+/* ========================================
+   🎯 SUPER ULTRA AGRESIV - MOBILE FULL WIDTH
+   ======================================== */
+
+/* 🔥 PE MOBIL: FORȚEAZĂ 100% WIDTH PENTRU TOATĂ IERARHIA - SIMPLU ȘI CURAT */
+@media (max-width: 768px) {
+    /* TOATE containerele principale - 100% width, FĂRĂ padding forțat */
+    .oc-admin-table-container,
+    .oc-admin-cards-container,
+    .oc-admin-cards-grid,
+    .oc-admin-card,
+    .oc-card-body,
+    .oc-form-row,
+    .oc-form-group,
+    .oc-full-width,
+    .oc-courses-expandedlist,
+    .oc-package-section,
+    .oc-package-header,
+    .oc-package-courses,
+    .oc-course-entry,
+    .oc-course-header {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* TOATE div-urile din ierarhie - 100% width */
+    .oc-admin-card div:not(.oc-stat-item):not(.oc-course-badge):not(.oc-package-badge),
+    .oc-form-row div,
+    .oc-form-group div,
+    .oc-full-width div,
+    .oc-courses-expandedlist div:not(.oc-stat-item):not(.oc-course-badge):not(.oc-package-badge),
+    .oc-package-section div:not(.oc-stat-item):not(.oc-course-badge):not(.oc-package-badge),
+    .oc-package-courses div:not(.oc-stat-item):not(.oc-course-badge):not(.oc-package-badge),
+    .oc-course-entry div:not(.oc-stat-item):not(.oc-course-badge):not(.oc-package-badge) {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* EXCEPȚIE: elemente inline - width auto */
+    span, label, small, strong, em, b, i, a {
+        width: auto !important;
+    }
+    
+    /* EXCEPȚIE: butoane - width auto */
+    button, .button, .oc-btn, input[type="submit"], input[type="button"] {
+        width: auto !important;
+        max-width: 100% !important;
+    }
+    
+    /* EXCEPȚIE: elements în grid/flex */
+    .oc-course-stats-grid,
+    .oc-stat-item,
+    .oc-course-badge,
+    .oc-package-badge {
+        width: auto !important;
+    }
+    
+    /* EXCEPȚIE: flexbox layout headers */
+    .oc-package-title-wrap,
+    .oc-package-status-wrap,
+    .oc-course-title-wrap,
+    .oc-course-date-wrap {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+}
+
+/* ========================================
+   🚨 GLOBAL OVERRIDE - FORȚEAZĂ RESPONSIVE
+   ======================================== */
+
+/* TOATE elementele cu inline styles - FORȚEAZĂ box-sizing */
+.oc-admin-table-container *,
+.oc-admin-cards-container *,
+.oc-package-section *,
+.oc-courses-expandedlist *,
+.oc-course-entry * {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+}
+
+/* TOATE flex containers - permite wrap */
+*[style*="display: flex"],
+*[style*="display:flex"] {
+    flex-wrap: wrap !important;
+}
+
+/* TOATE grid containers - responsive */
+*[style*="display: grid"],
+*[style*="display:grid"] {
+    max-width: 100% !important;
+}
+
+/* TOATE width fixe - OVERRIDE */
+*[style*="width: 98%"],
+*[style*="width:98%"] {
+    width: 100% !important;
+}
+
+/* ========================================
+   🎯 COURSES EXPANDED LIST - CONTAINER PRINCIPAL
+   ======================================== */
+
+/* Container principal pentru lista de cursuri expandată */
+.oc-courses-expandedlist {
+    background: #f8f9fa !important;
+    padding: 15px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ddd !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* 🚨 SUPER AGRESIV: FORȚEAZĂ width constraints pe TOATE descendentele */
+.oc-courses-expandedlist *,
+.oc-courses-expandedlist *:before,
+.oc-courses-expandedlist *:after {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+/* FORȚEAZĂ width 100% pe TOATE copiii direcți */
+.oc-courses-expandedlist > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Mobile: padding mai mic */
+@media (max-width: 768px) {
+    .oc-courses-expandedlist {
+        padding: 10px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-courses-expandedlist {
+        padding: 8px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* ========================================
+   🎯 PACKAGE SECTIONS - FORȚEAZĂ RESPONSIVE
+   ======================================== */
+
+/* Package section container */
+.oc-package-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    background: white !important;
+    margin-bottom: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 15px !important;
+    border-radius: 6px !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+/* Package section colors by status */
+.oc-package-section.oc-package-active {
+    border-color: #28a745 !important; /* Verde pentru activ */
+}
+
+.oc-package-section.oc-package-pending {
+    border-color: #0073aa !important; /* Albastru pentru pending */
+}
+
+.oc-package-section.oc-package-expired {
+    border-color: #dc3545 !important; /* Roșu pentru expirat */
+}
+
+/* Mobile: reduce padding pe package section pentru mai mult spațiu */
+@media (max-width: 768px) {
+    .oc-package-section {
+        padding: 10px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-package-section {
+        padding: 8px !important;
+        margin-bottom: 12px !important;
+    }
+}
+
+/* FORȚEAZĂ width 100% pe TOATE copiii direcți din package */
+.oc-package-section > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Package courses container */
+.oc-package-courses {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important; /* Previne ieșirea copiilor */
+}
+
+/* FORȚEAZĂ width 100% pe TOATE copiii din package-courses */
+.oc-package-courses > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* ========================================
+   🎯 PACKAGE HEADER - CLEAN CSS LAYOUT
+   ======================================== */
+
+/* Package header wrapper */
+.oc-package-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    margin-bottom: 15px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #e9ecef !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* FORȚEAZĂ width 100% pe TOATE copiii din package-header */
+.oc-package-header > * {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Package title wrap */
+.oc-package-title-wrap {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* Package title */
+.oc-package-title {
+    margin: 0 0 5px 0 !important;
+    color: #2c5282 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.4 !important;
+}
+
+/* Package order */
+.oc-package-order {
+    color: #666 !important;
+    font-size: 12px !important;
+    display: block !important;
+    margin-top: 3px !important;
+}
+
+/* Package status wrap */
+.oc-package-status-wrap {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+}
+
+/* Package badge */
+.oc-package-badge {
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    color: white !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    width: fit-content !important;
+}
+
+/* Package badge colors by status */
+.oc-package-badge-active {
+    background: #28a745 !important; /* Verde pentru activ */
+}
+
+.oc-package-badge-pending {
+    background: #0073aa !important; /* Albastru pentru pending */
+}
+
+.oc-package-badge-expired {
+    background: #dc3545 !important; /* Roșu pentru expirat */
+}
+
+/* Package date */
+.oc-package-date {
+    font-size: 12px !important;
+    color: #666 !important;
+}
+
+.oc-package-price {
+    font-size: 13px !important;
+    color: #1f2937 !important;
+    font-weight: 600 !important;
+}
+
+.oc-package-payment {
+    font-size: 12.5px !important;
+    color: #334155 !important;
+}
+
+.oc-package-financial-fields {
+    margin-top: 6px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(180px, 1fr)) !important;
+    gap: 8px !important;
+}
+
+.oc-package-financial-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.oc-package-financial-item label {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+}
+
+.oc-package-financial-item input,
+.oc-package-financial-item select,
+.oc-package-financial-item textarea {
+    min-height: 34px !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    font-size: 12.5px !important;
+}
+
+.oc-package-financial-item-full {
+    grid-column: 1 / -1 !important;
+}
+
+.oc-package-observations-wrap {
+    margin-top: 10px !important;
+    margin-bottom: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.oc-package-observations-wrap label {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+}
+
+.oc-package-observations-wrap textarea {
+    min-height: 34px !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    font-size: 12.5px !important;
+}
+
+@media (max-width: 768px) {
+    .oc-package-financial-fields {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.oc-package-courses-label {
+    margin: 0 0 10px 0 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+    color: #334155 !important;
+}
+
+.oc-active-packages-total {
+    margin-top: 12px !important;
+    padding: 10px 12px !important;
+    border: 1px solid #dbe4ef !important;
+    border-radius: 8px !important;
+    background: #f8fbff !important;
+    color: #0f172a !important;
+    font-size: 13px !important;
+}
+
+.oc-header-packages-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    margin: 4px 0 8px 0 !important;
+}
+
+.oc-header-package-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    padding: 6px 8px !important;
+    border-radius: 7px !important;
+    background: #f8fafc !important;
+    border-left: 3px solid #94a3b8 !important;
+}
+
+.oc-header-package-item[data-status="active"] {
+    border-left-color: #16a34a !important;
+}
+
+.oc-header-package-item[data-status="pending"] {
+    border-left-color: #0284c7 !important;
+}
+
+.oc-header-package-item[data-status="expired"] {
+    border-left-color: #dc2626 !important;
+}
+
+.oc-header-package-name {
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+}
+
+.oc-header-package-meta {
+    font-size: 12px !important;
+    color: #334155 !important;
+}
+
+.oc-header-package-status {
+    display: inline-block !important;
+    width: fit-content !important;
+    padding: 2px 8px !important;
+    border-radius: 999px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+.oc-header-package-status.oc-status-active {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+}
+
+.oc-header-package-status.oc-status-pending {
+    background: #e0f2fe !important;
+    color: #075985 !important;
+}
+
+.oc-header-package-status.oc-status-expired {
+    background: #fee2e2 !important;
+    color: #991b1b !important;
+}
+
+.oc-header-package-courses {
+    margin-top: 2px !important;
+    font-size: 12px !important;
+    color: #334155 !important;
+}
+
+.oc-header-package-courses-list {
+    margin: 4px 0 0 16px !important;
+    padding: 0 !important;
+}
+
+.oc-header-package-courses-empty {
+    margin-left: 4px !important;
+    color: #64748b !important;
+}
+
+.oc-inline-confirm-backdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(15, 23, 42, 0.52) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 100000 !important;
+    padding: 28px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.oc-inline-confirm-dialog {
+    width: min(640px, 100%) !important;
+    min-height: 280px !important;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%) !important;
+    border-radius: 18px !important;
+    border: 1px solid #dbe4ef !important;
+    box-shadow: 0 24px 56px rgba(2, 6, 23, 0.30) !important;
+    padding: 24px !important;
+    display: grid !important;
+    grid-template-rows: auto auto 1fr auto !important;
+    gap: 14px !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    max-width: calc(100vw - 56px) !important;
+    max-height: calc(100vh - 56px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+.oc-inline-confirm-close {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+    width: 38px !important;
+    height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 999px !important;
+    border: 1px solid #d7e0ea !important;
+    background: #f8fafc !important;
+    color: #334155 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+}
+
+.oc-inline-confirm-close .dashicons {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 18px !important;
+}
+
+.oc-inline-confirm-badge {
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, #eef5ff 0%, #dcecff 100%) !important;
+    color: #1858b8 !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+.oc-inline-confirm-badge .dashicons {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 28px !important;
+}
+
+.oc-inline-confirm-badge-accent {
+    background: linear-gradient(135deg, #eaf8ef 0%, #d8f3df 100%) !important;
+    color: #15803d !important;
+}
+
+.oc-inline-confirm-kicker {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 5px 10px !important;
+    border-radius: 999px !important;
+    background: #e8f1ff !important;
+    color: #1858b8 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 8px !important;
+}
+
+.oc-inline-confirm-header h3 {
+    margin: 0 !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    color: #0f172a !important;
+}
+
+.oc-inline-confirm-body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+    gap: 12px !important;
+}
+
+.oc-inline-confirm-body p {
+    margin: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    color: #334155 !important;
+}
+
+.oc-inline-confirm-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+    padding-top: 4px !important;
+}
+
+.oc-inline-confirm-actions .button {
+    min-height: 42px !important;
+    padding: 0 16px !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 768px) {
+    .oc-inline-confirm-backdrop {
+        padding: 8px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .oc-inline-confirm-dialog {
+        width: min(420px, 82vw) !important;
+        min-height: auto !important;
+        padding: 16px !important;
+        max-width: min(420px, 82vw) !important;
+        max-height: calc(100vh - 16px) !important;
+        margin: auto !important;
+    }
+
+    .oc-inline-confirm-close {
+        top: 12px !important;
+        right: 12px !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .oc-inline-confirm-badge {
+        width: 56px !important;
+        height: 56px !important;
+        border-radius: 18px !important;
+    }
+
+    .oc-inline-confirm-header h3 {
+        font-size: 19px !important;
+    }
+
+    .oc-inline-confirm-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .oc-inline-confirm-actions .button {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+
+/* Desktop: keep horizontal if space allows */
+@media (min-width: 769px) {
+    .oc-package-title-wrap {
+        flex: 1 1 60% !important;
+        width: auto !important;
+    }
+    
+    .oc-package-status-wrap {
+        flex: 0 1 auto !important;
+        width: auto !important;
+        text-align: right !important;
+        align-items: flex-end !important;
+    }
+}
+
+/* Mobile: FORCE vertical layout */
+@media (max-width: 768px) {
+    .oc-package-header {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .oc-package-title {
+        font-size: 14px !important;
+    }
+    
+    .oc-package-badge {
+        font-size: 12px !important;
+        padding: 5px 10px !important;
+    }
+    
+    .oc-package-date {
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-package-header {
+        gap: 10px !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 8px !important;
+    }
+    
+    .oc-package-title {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .oc-package-order {
+        font-size: 10px !important;
+    }
+    
+    .oc-package-badge {
+        font-size: 11px !important;
+        padding: 4px 8px !important;
+    }
+    
+    .oc-package-date {
+        font-size: 10px !important;
+    }
+}
+
+/* ========================================
+   🎯 COURSE ENTRY - CLEAN CSS LAYOUT
+   ======================================== */
+
+/* Course entry container */
+.oc-course-entry {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    background: #fafafa !important;
+    padding: 12px !important;
+    margin-bottom: 10px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 4px !important;
+    border-left-width: 4px !important;
+    border-left-style: solid !important;
+    box-sizing: border-box !important;
+    position: relative !important; /* Pentru a preveni ieșirea */
+}
+
+/* Course entry border colors by parent package status */
+.oc-package-active .oc-course-entry,
+.oc-course-entry[data-status="active"] {
+    border-left-color: #28a745 !important; /* Verde pentru activ */
+}
+
+.oc-package-pending .oc-course-entry,
+.oc-course-entry[data-status="pending"] {
+    border-left-color: #0073aa !important; /* Albastru pentru pending */
+}
+
+.oc-package-expired .oc-course-entry,
+.oc-course-entry[data-status="expired"] {
+    border-left-color: #dc3545 !important; /* Roșu pentru expirat */
+}
+
+/* Mobile: reduce padding pentru a preveni overflow */
+@media (max-width: 768px) {
+    .oc-course-entry {
+        padding: 10px !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-course-entry {
+        padding: 8px !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* FORȚEAZĂ width 100% pe TOATE copiii direcți din course-entry */
+.oc-course-entry > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Course header */
+.oc-course-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    margin-bottom: 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* FORȚEAZĂ width 100% pe TOATE copiii din course-header */
+.oc-course-header > * {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Course title wrap */
+.oc-course-title-wrap {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 5px !important;
+}
+
+/* Course label */
+.oc-course-label {
+    font-size: 12px !important;
+    color: #666 !important;
+    font-weight: 600 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.4 !important;
+    flex: 1 1 auto !important;
+}
+
+/* Course badge */
+.oc-course-badge {
+    display: inline-block !important;
+    padding: 3px 8px !important;
+    color: white !important;
+    border-radius: 3px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+.oc-course-badge-active {
+    background: #28a745 !important;
+}
+
+.oc-course-badge-pending {
+    background: #0073aa !important;
+}
+
+.oc-course-badge-expired {
+    background: #dc3545 !important;
+}
+
+/* Course date wrap */
+.oc-course-date-wrap {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    font-size: 11px !important;
+    color: #666 !important;
+}
+
+/* Desktop: keep some horizontal if space */
+@media (min-width: 769px) {
+    .oc-course-title-wrap {
+        flex: 1 1 60% !important;
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .oc-course-date-wrap {
+        flex: 0 1 auto !important;
+        width: auto !important;
+        text-align: right !important;
+    }
+}
+
+/* Mobile: FORCE vertical layout pentru course header și copii */
+@media (max-width: 768px) {
+    .oc-course-header {
+        flex-direction: column !important;
+        gap: 8px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .oc-course-label {
+        font-size: 11px !important;
+        flex: 1 1 100% !important;
+    }
+    
+    .oc-course-badge {
+        font-size: 10px !important;
+        padding: 2px 6px !important;
+    }
+    
+    .oc-course-date-wrap {
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-course-header {
+        gap: 6px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .oc-course-label {
+        font-size: 10px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .oc-course-badge {
+        font-size: 9px !important;
+        padding: 2px 5px !important;
+    }
+    
+    .oc-course-date-wrap {
+        font-size: 9px !important;
+    }
+}
+
+/* ========================================
+   🎯 GRID 4 COLOANE - RESPONSIVE FORȚAT
+   ======================================== */
+
+/* Grid stats (Incluse, Rămase, Folosite, Validare) */
+.oc-course-stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 10px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* FORȚEAZĂ width limitată pe TOATE copiii din stats-grid */
+.oc-course-stats-grid > * {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+/* Stat item container */
+.oc-stat-item {
+    min-width: 0 !important;
+    padding: 8px 5px !important;
+    text-align: center !important;
+    background: white !important;
+    border-radius: 4px !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+/* Stat label */
+.oc-stat-label {
+    font-size: 10px !important;
+    color: #999 !important;
+    display: block !important;
+    margin-bottom: 4px !important;
+    line-height: 1.2 !important;
+}
+
+/* Stat value */
+.oc-stat-value {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    line-height: 1.2 !important;
+}
+
+/* Stat value colors */
+.oc-stat-allocated {
+    color: #333 !important;
+}
+
+.oc-stat-remaining {
+    color: #28a745 !important;
+}
+
+.oc-stat-used {
+    color: #dc3545 !important;
+}
+
+.oc-stat-validation {
+    font-size: 11px !important;
+    color: #666 !important;
+    word-wrap: break-word !important;
+}
+
+/* Tablet: 2 coloane cu mai mult spațiu */
+@media (max-width: 768px) {
+    .oc-course-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-top: 12px !important;
+    }
+    
+    .oc-stat-item {
+        padding: 10px 8px !important;
+    }
+    
+    .oc-stat-label {
+        font-size: 10px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .oc-stat-value {
+        font-size: 16px !important;
+    }
+    
+    .oc-stat-validation {
+        font-size: 12px !important;
+    }
+}
+
+/* Mobile: 2 coloane cu MULT spacing pentru claritate */
+@media (max-width: 600px) {
+    .oc-course-stats-grid {
+        gap: 12px !important;
+    }
+    
+    .oc-stat-item {
+        padding: 12px 8px !important;
+    }
+}
+
+/* Very small: încă 2 coloane dar mai compact */
+@media (max-width: 480px) {
+    .oc-course-stats-grid {
+        gap: 8px !important;
+        margin-top: 10px !important;
+    }
+    
+    .oc-stat-item {
+        padding: 8px 5px !important;
+    }
+    
+    .oc-stat-label {
+        font-size: 9px !important;
+        margin-bottom: 3px !important;
+    }
+    
+    .oc-stat-value {
+        font-size: 14px !important;
+    }
+    
+    .oc-stat-validation {
+        font-size: 10px !important;
+    }
+}
+
+/* Extra small: 1 coloană DOAR sub 360px pentru ecrane foarte mici */
+@media (max-width: 360px) {
+    .oc-course-stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    
+    .oc-stat-item {
+        padding: 10px !important;
+    }
+}
+
+/* ========================================
+   🎯 CONTAINERS PRINCIPALE - WIDTH 100%
+   ======================================== */
+
+/* Container principal admin table */
+.oc-admin-table-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding: 0 !important;
+}
+
+/* Cards container */
+.oc-admin-cards-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Individual cards */
+.oc-admin-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 0 15px 0 !important;
+    padding: 12px !important;
+    overflow: visible !important; /* Permite conținutul să fie vizibil */
+    box-sizing: border-box !important;
+}
+
+/* FORȚEAZĂ width constraints pe TOATE descendentele cardurilor */
+.oc-admin-card *,
+.oc-admin-card *:before,
+.oc-admin-card *:after {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Form containers - TREBUIE width 100% */
+.oc-form-row,
+.oc-form-group,
+.oc-full-width,
+.oc-form-group.oc-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* FORȚEAZĂ width constraints pe descendentele form-group */
+.oc-form-group *,
+.oc-form-group *:before,
+.oc-form-group *:after {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Mobile: cards mai compacte */
+@media (max-width: 768px) {
+    .oc-admin-card {
+        width: 100% !important;
+        margin: 0 0 12px 0 !important;
+        padding: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-admin-card {
+        padding: 8px !important;
+    }
+}
+
+/* ========================================
+   🎯 CARD HEADER - RESPONSIVE LAYOUT
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Card header main */
+    .oc-card-header {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 10px !important;
+        border-bottom: 2px solid #e0e0e0 !important;
+        gap: 10px !important;
+    }
+
+    /* Card main info - member identity */
+    .oc-card-main-info {
+        flex: 1 1 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* Member identity */
+    .oc-member-identity {
+        margin-bottom: 8px !important;
+    }
+
+    /* Member name */
+    .oc-member-name {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #2c3e50 !important;
+        margin-bottom: 4px !important;
+    }
+
+    /* User ID badge */
+    .oc-user-id-badge {
+        font-size: 11px !important;
+        background: #e0e0e0 !important;
+        color: #666 !important;
+        padding: 2px 6px !important;
+        border-radius: 3px !important;
+        margin-left: 6px !important;
+    }
+
+    /* Member email */
+    .oc-member-email {
+        font-size: 13px !important;
+        color: #666 !important;
+    }
+
+    /* Membership info */
+    .oc-membership-info {
+        margin-top: 8px !important;
+    }
+
+    /* Subscription type */
+    .oc-subscription-type {
+        font-size: 14px !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* Card actions */
+    .oc-card-actions {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: stretch !important;
+    }
+}
+
+/* ========================================
+   🎯 SISTEM UNIFORM BUTOANE - PROFESIONAL
+   ======================================== */
+
+/* 🔥 BAZĂ UNIVERSALĂ PENTRU TOATE BUTOANELE */
+button,
+.button,
+.oc-btn,
+input[type="submit"],
+input[type="button"],
+.oc-btn-info,
+.oc-btn-validate,
+.oc-btn-qr,
+.oc-btn-activate-membership,
+.oc-btn-cancel-membership,
+.oc-btn-add-course,
+#oc-toggle-add-client-form {
+    /* Dimensiuni consistente */
+    min-height: 44px !important;
+    padding: 10px 16px !important;
+    
+    /* Typography consistentă */
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    
+    /* Visual consistent */
+    border-radius: 6px !important;
+    border: none !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    
+    /* Animații smooth */
+    transition: all 0.2s ease !important;
+    
+    /* Text handling */
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* Hover universal pentru toate butoanele */
+button:hover,
+.button:hover,
+.oc-btn:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Active/pressed state universal */
+button:active,
+.button:active,
+.oc-btn:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Disabled state universal */
+button:disabled,
+.button:disabled,
+.oc-btn:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+/* ========================================
+   🎯 CULORI SPECIFICE BUTOANE
+   ======================================== */
+
+/* Butoane PRIMARY (albastru) - acțiuni principale */
+.button-primary,
+.oc-btn-info,
+.oc-btn-activate-membership,
+#oc-toggle-add-client-form {
+    background: linear-gradient(135deg, #0073aa 0%, #005a87 100%) !important;
+    color: white !important;
+}
+
+.button-primary:hover,
+.oc-btn-info:hover,
+.oc-btn-activate-membership:hover,
+#oc-toggle-add-client-form:hover {
+    background: linear-gradient(135deg, #005a87 0%, #004070 100%) !important;
+    box-shadow: 0 4px 12px rgba(0, 115, 170, 0.3) !important;
+}
+
+/* Butoane SUCCESS (verde) - confirmări */
+.button-success,
+.oc-btn-validate,
+.oc-btn-add-course {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%) !important;
+    color: white !important;
+}
+
+.button-success:hover,
+.oc-btn-validate:hover,
+.oc-btn-add-course:hover {
+    background: linear-gradient(135deg, #218838 0%, #1e7e34 100%) !important;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;
+}
+
+/* Butoane WARNING (portocaliu) - atenționări */
+.button-warning,
+.oc-btn-qr {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%) !important;
+    color: white !important;
+}
+
+.button-warning:hover,
+.oc-btn-qr:hover {
+    background: linear-gradient(135deg, #f57c00 0%, #e65100 100%) !important;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3) !important;
+}
+
+/* Butoane DANGER (roșu) - acțiuni periculoase */
+.button-danger,
+.oc-btn-cancel-membership {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+}
+
+.button-danger:hover,
+.oc-btn-cancel-membership:hover {
+    background: linear-gradient(135deg, #c82333 0%, #bd2130 100%) !important;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3) !important;
+}
+
+/* Butoane SECONDARY (gri) - acțiuni secundare */
+.button-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%) !important;
+    color: white !important;
+}
+
+.button-secondary:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #545b62 100%) !important;
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3) !important;
+}
+
+/* ========================================
+   🎯 ACTION BUTTONS CONTAINER
+   ======================================== */
+
+/* Action buttons container - butoanele Info, Validate, QR */
+.oc-action-buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    justify-content: flex-start !important;
+    margin-top: 12px !important;
+    width: 100% !important;
+}
+
+/* Action buttons - dimensiuni flexibile */
+.oc-action-buttons .oc-btn-info,
+.oc-action-buttons .oc-btn-validate,
+.oc-action-buttons .oc-btn-qr {
+    flex: 1 1 calc(33.333% - 10px) !important;
+    min-width: 0 !important;
+    white-space: normal !important; /* Permite wrap text pe 2 linii */
+}
+
+/* Dashicons în butoane */
+.oc-btn-info .dashicons,
+.oc-btn-validate .dashicons,
+.oc-btn-qr .dashicons {
+    vertical-align: middle !important;
+    margin-right: 4px !important;
+    font-size: 16px !important;
+}
+
+/* ========================================
+   🎯 BUTOANE SPECIALE - ANULEAZĂ & ACTIVEAZĂ
+   ======================================== */
+
+/* Container principal pentru acțiuni pachet */
+.oc-package-actions-container {
+    width: 100% !important;
+    margin: 15px 0 !important;
+}
+
+/* ========================================
+   🎯 BUTTON MODERNIZATION (SCOPED, NO COLOR CHANGES)
+   ======================================== */
+
+.oc-admin-table-container .oc-btn,
+.oc-admin-table-container .button,
+.oc-admin-table-container .oc-btn-info,
+.oc-admin-table-container .oc-btn-validate,
+.oc-admin-table-container .oc-btn-qr,
+.oc-admin-table-container .oc-btn-activate-membership,
+.oc-admin-table-container .oc-btn-cancel-membership,
+.oc-admin-table-container .oc-btn-add-subscription,
+.oc-admin-table-container .oc-btn-save-member,
+.oc-admin-table-container .oc-btn-cancel-edit,
+.oc-admin-table-container .oc-btn-add-course,
+.oc-admin-table-container .oc-btn-create-order,
+.oc-admin-table-container .oc-btn-close-form,
+.oc-admin-table-container .button-large,
+.oc-admin-table-container .button-primary,
+.oc-admin-table-container .button-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    min-height: 40px !important;
+    padding: 9px 14px !important;
+    border-radius: 10px !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.01em !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease !important;
+}
+
+.oc-admin-table-container .oc-btn:hover,
+.oc-admin-table-container .button:hover,
+.oc-admin-table-container .oc-btn-info:hover,
+.oc-admin-table-container .oc-btn-validate:hover,
+.oc-admin-table-container .oc-btn-qr:hover,
+.oc-admin-table-container .oc-btn-activate-membership:hover,
+.oc-admin-table-container .oc-btn-cancel-membership:hover,
+.oc-admin-table-container .oc-btn-add-subscription:hover,
+.oc-admin-table-container .oc-btn-save-member:hover,
+.oc-admin-table-container .oc-btn-cancel-edit:hover,
+.oc-admin-table-container .oc-btn-add-course:hover,
+.oc-admin-table-container .oc-btn-create-order:hover,
+.oc-admin-table-container .oc-btn-close-form:hover,
+.oc-admin-table-container .button-large:hover,
+.oc-admin-table-container .button-primary:hover,
+.oc-admin-table-container .button-secondary:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14) !important;
+}
+
+.oc-admin-table-container .oc-btn:active,
+.oc-admin-table-container .button:active,
+.oc-admin-table-container .oc-btn-info:active,
+.oc-admin-table-container .oc-btn-validate:active,
+.oc-admin-table-container .oc-btn-qr:active,
+.oc-admin-table-container .oc-btn-activate-membership:active,
+.oc-admin-table-container .oc-btn-cancel-membership:active,
+.oc-admin-table-container .button-primary:active,
+.oc-admin-table-container .button-secondary:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+}
+
+.oc-admin-table-container .oc-btn:focus-visible,
+.oc-admin-table-container .button:focus-visible,
+.oc-admin-table-container .oc-btn-info:focus-visible,
+.oc-admin-table-container .oc-btn-validate:focus-visible,
+.oc-admin-table-container .oc-btn-qr:focus-visible,
+.oc-admin-table-container .oc-btn-activate-membership:focus-visible,
+.oc-admin-table-container .oc-btn-cancel-membership:focus-visible,
+.oc-admin-table-container .button-primary:focus-visible,
+.oc-admin-table-container .button-secondary:focus-visible {
+    outline: 2px solid currentColor !important;
+    outline-offset: 2px !important;
+}
+
+.oc-admin-table-container .oc-btn .dashicons,
+.oc-admin-table-container .button .dashicons {
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 14px !important;
+    line-height: 14px !important;
+}
+
+.oc-admin-table-container .oc-action-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    width: 100% !important;
+}
+
+.oc-admin-table-container .oc-action-buttons .oc-btn-info,
+.oc-admin-table-container .oc-action-buttons .oc-btn-validate,
+.oc-admin-table-container .oc-action-buttons .oc-btn-qr {
+    width: 100% !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+}
+
+.oc-admin-table-container .oc-package-buttons-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+}
+
+.oc-admin-table-container .oc-package-buttons-row .oc-btn-activate-membership,
+.oc-admin-table-container .oc-package-buttons-row .oc-btn-cancel-membership {
+    width: 100% !important;
+}
+
+@media (max-width: 768px) {
+    .oc-admin-table-container .oc-package-buttons-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .oc-admin-table-container .oc-btn,
+    .oc-admin-table-container .button,
+    .oc-admin-table-container .button-large,
+    .oc-admin-table-container .button-primary,
+    .oc-admin-table-container .button-secondary {
+        width: 100% !important;
+    }
+}
+
+/* Secțiune activare (checkbox și date picker) */
+.oc-pending-activation-section {
+    margin-bottom: 15px !important;
+    padding: 15px !important;
+    background: #f0f8ff !important;
+    border: 2px solid #0073aa !important;
+    border-radius: 8px !important;
+}
+
+.oc-activation-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 6px 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.oc-activation-title,
+.oc-activation-subtitle {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+}
+
+.oc-activation-checkbox-wrap {
+    margin: 8px 0 10px !important;
+}
+
+.oc-activation-label {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    user-select: none !important;
+}
+
+.oc-activation-label input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    margin: 0 !important;
+    transform: none !important;
+    appearance: auto !important;
+    -webkit-appearance: checkbox !important;
+    vertical-align: middle !important;
+}
+
+.oc-activation-label-text {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+}
+
+/* Pending status: identical visual language with card status badge */
+.oc-admin-table-container .oc-package-badge.oc-package-badge-pending,
+.oc-admin-table-container .oc-course-badge.oc-course-badge-pending,
+.oc-admin-table-container .oc-activation-status-badge.oc-status-badge.status-pending {
+    background: #cce5ff !important;
+    color: #004085 !important;
+    border: 1px solid #b8daff !important;
+    border-radius: 12px !important;
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.oc-activation-date-picker {
+    margin-top: 8px !important;
+}
+
+.oc-date-picker-label {
+    display: inline-block !important;
+    margin-bottom: 6px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+}
+
+.oc-activation-date-input {
+    min-height: 38px !important;
+    padding: 8px 10px !important;
+    border: 1px solid #8c8f94 !important;
+    border-radius: 4px !important;
+    background: #fff !important;
+    cursor: pointer !important;
+}
+
+.oc-activation-date-input:focus {
+    border-color: #0073aa !important;
+    box-shadow: 0 0 0 1px #0073aa !important;
+    outline: none !important;
+}
+
+.oc-expiry-mode-wrap {
+    margin-top: 10px !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed rgba(0, 115, 170, 0.35) !important;
+}
+
+.oc-expiry-mode-label {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    user-select: none !important;
+}
+
+.oc-preserve-expiry-checkbox {
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px !important;
+    min-height: 15px !important;
+    margin: 0 !important;
+    transform: none !important;
+    appearance: auto !important;
+    -webkit-appearance: checkbox !important;
+}
+
+.oc-expiry-mode-text {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+}
+
+.oc-expiry-mode-hint {
+    display: block !important;
+    margin-top: 4px !important;
+    font-size: 12px !important;
+    color: #4b5563 !important;
+    line-height: 1.4 !important;
+}
+
+.oc-package-date-fields {
+    margin-top: 14px !important;
+    padding: 12px !important;
+    border: 1px solid #d8dee6 !important;
+    border-radius: 10px !important;
+    background: linear-gradient(180deg, #fafcff 0%, #f5f8fc 100%) !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05) !important;
+}
+
+.oc-package-date-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(220px, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    align-items: start !important;
+}
+
+.oc-package-date-fields .oc-form-group {
+    margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+}
+
+.oc-package-date-fields .oc-form-group > label {
+    margin: 0 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #334155 !important;
+    letter-spacing: 0.02em !important;
+}
+
+.oc-package-date-fields .oc-expiry-controls {
+    margin-top: 8px !important;
+    padding: 8px 10px !important;
+    border: 1px solid #dbe4ef !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+}
+
+.oc-package-date-fields .oc-wp-date-input {
+    min-height: 38px !important;
+    border-radius: 7px !important;
+    border-color: #b9c5d4 !important;
+    background: #fff !important;
+    font-size: 13px !important;
+    padding: 8px 10px !important;
+}
+
+.oc-package-date-fields .oc-wp-date-input:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 1px #2563eb !important;
+}
+
+.oc-package-date-fields .oc-no-expiry-label,
+.oc-package-date-fields .oc-expiry-mode-label {
+    display: inline-flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin: 0 !important;
+}
+
+.oc-package-date-fields .oc-no-expiry-text,
+.oc-package-date-fields .oc-expiry-mode-text {
+    font-size: 12.5px !important;
+    line-height: 1.35 !important;
+    color: #1f2937 !important;
+}
+
+.oc-package-date-fields .oc-expiry-mode-wrap {
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+    border-top: 1px dashed #cbd5e1 !important;
+}
+
+.oc-package-date-fields .oc-expiry-mode-hint {
+    margin-top: 5px !important;
+    color: #475569 !important;
+    font-size: 11.5px !important;
+    line-height: 1.35 !important;
+}
+
+@media (max-width: 768px) {
+    .oc-package-date-fields {
+        padding: 10px !important;
+        border-radius: 8px !important;
+    }
+
+    .oc-package-date-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+}
+
+/* Container pentru butoanele de anulare și activare */
+.oc-package-buttons-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+}
+
+/* Butoane anulează și activează - dimensiuni egale */
+.oc-package-buttons-row .oc-btn-cancel-membership,
+.oc-package-buttons-row .oc-btn-activate-membership {
+    flex: 1 1 calc(50% - 7.5px) !important;
+    min-width: 0 !important;
+    max-width: calc(50% - 7.5px) !important;
+}
+
+.oc-validation-history-panel {
+    margin-top: 10px !important;
+    border: 1px solid #dbe4ef !important;
+    border-radius: 8px !important;
+    background: #f8fbff !important;
+    padding: 10px !important;
+}
+
+.oc-validation-history-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.oc-validation-history-controls {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+.oc-validation-history-controls label {
+    font-size: 12px !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+}
+
+.oc-validation-history-controls select {
+    min-height: 30px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    padding: 0 8px !important;
+    background: #fff !important;
+}
+
+.oc-validation-history-item {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    background: #ffffff !important;
+    padding: 8px 10px !important;
+}
+
+.oc-validation-history-main {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.oc-validation-history-meta {
+    margin-top: 4px !important;
+    font-size: 12px !important;
+    color: #64748b !important;
+}
+
+.oc-validation-history-course {
+    font-size: 12.5px !important;
+    color: #0f172a !important;
+    font-weight: 600 !important;
+}
+
+.oc-validation-history-badge {
+    display: inline-block !important;
+    border-radius: 999px !important;
+    padding: 2px 8px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+
+.oc-history-scan_valid {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+}
+
+.oc-history-scan_failed {
+    background: #fee2e2 !important;
+    color: #991b1b !important;
+}
+
+.oc-history-admin_adjustment {
+    background: #e0f2fe !important;
+    color: #075985 !important;
+}
+
+.oc-history-admin_cancel {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+}
+
+.oc-validation-history-footer {
+    margin-top: 10px !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.oc-validation-history-loading,
+.oc-validation-history-empty,
+.oc-validation-history-error {
+    font-size: 12.5px !important;
+    color: #475569 !important;
+}
+
+/* Desktop: butoanele rămân pe același rând, activare în stânga, anulare în dreapta */
+@media (min-width: 769px) {
+    .oc-package-buttons-row {
+        flex-direction: row !important;
+        gap: 20px !important;
+    }
+    
+    .oc-package-buttons-row .oc-btn-activate-membership {
+        order: 1 !important; /* Activare stânga */
+    }
+    
+    .oc-package-buttons-row .oc-btn-cancel-membership {
+        order: 2 !important; /* Anulare dreapta */
+    }
+}
+
+/* Mobile: butoanele stack vertical pentru claritate */
+@media (max-width: 768px) {
+    .oc-package-buttons-row {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .oc-package-buttons-row .oc-btn-cancel-membership,
+    .oc-package-buttons-row .oc-btn-activate-membership {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .oc-pending-activation-section {
+        padding: 12px !important;
+    }
+}
+
+/* ========================================
+   🎯 RESPONSIVE BUTOANE
+   ======================================== */
+
+/* Tablet: 3 butoane pe rând */
+@media (max-width: 768px) {
+    button,
+    .button,
+    .oc-btn {
+        min-height: 44px !important;
+        padding: 10px 14px !important;
+        font-size: 14px !important;
+    }
+    
+    .oc-action-buttons {
+        gap: 8px !important;
+    }
+    
+    .oc-action-buttons .oc-btn-info,
+    .oc-action-buttons .oc-btn-validate,
+    .oc-action-buttons .oc-btn-qr {
+        flex: 1 1 calc(33.333% - 8px) !important;
+    }
+}
+
+/* Mobile: 2 butoane pe rând */
+@media (max-width: 600px) {
+    button,
+    .button,
+    .oc-btn {
+        min-height: 48px !important;
+        padding: 12px 14px !important;
+        font-size: 14px !important;
+    }
+    
+    .oc-action-buttons {
+        gap: 10px !important;
+    }
+    
+    .oc-action-buttons .oc-btn-info,
+    .oc-action-buttons .oc-btn-validate,
+    .oc-action-buttons .oc-btn-qr {
+        flex: 1 1 calc(50% - 10px) !important;
+    }
+}
+
+/* Mobile mic: 1 coloană full width */
+@media (max-width: 400px) {
+    button,
+    .button,
+    .oc-btn {
+        min-height: 50px !important;
+        padding: 14px 16px !important;
+        font-size: 15px !important;
+    }
+    
+    .oc-action-buttons {
+        gap: 12px !important;
+    }
+    
+    .oc-action-buttons .oc-btn-info,
+    .oc-action-buttons .oc-btn-validate,
+    .oc-action-buttons .oc-btn-qr {
+        flex: 1 1 100% !important;
+    }
+}
+
+/* ========================================
+   🎯 QR MODAL BUTTON OVERRIDES (ANTI-CLIP)
+   ======================================== */
+@media (max-width: 640px) {
+    .oc-qr-modal-overlay .oc-qr-modal-title,
+    .oc-qr-modal-overlay .oc-qr-item-label,
+    .oc-qr-modal-overlay .oc-qr-modal-actions .oc-qr-btn,
+    .oc-qr-modal-overlay .oc-qr-modal-actions .oc-qr-btn-close,
+    .oc-qr-modal-overlay .oc-qr-modal-actions .oc-qr-btn-download {
+        font-size: 14px !important;
+        line-height: 1.3 !important;
+    }
+
+    .oc-qr-modal-overlay .oc-qr-modal-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    .oc-qr-modal-overlay .oc-qr-modal-actions .oc-qr-btn,
+    .oc-qr-modal-overlay .oc-qr-modal-actions .oc-qr-btn-close,
+    .oc-qr-modal-overlay .oc-qr-modal-actions .oc-qr-btn-download {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        word-break: break-word !important;
+        box-sizing: border-box !important;
+    }
+
+    .oc-renew-course-selections .oc-course-checkbox,
+    #oc-new-course-selections .oc-course-checkbox {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        min-height: 74px !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding-left: 34px !important;
+    }
+
+    .oc-renew-course-selections .oc-course-checkbox input[type="checkbox"],
+    .oc-renew-course-selections .oc-course-checkbox input[type="radio"],
+    #oc-new-course-selections .oc-course-checkbox input[type="checkbox"],
+    #oc-new-course-selections .oc-course-checkbox input[type="radio"] {
+        position: absolute !important;
+        left: 10px !important;
+        top: 11px !important;
+        width: 16px !important;
+        height: 16px !important;
+        min-width: 16px !important;
+        min-height: 16px !important;
+        margin: 0 !important;
+        float: none !important;
+        transform: none !important;
+        align-self: flex-start !important;
+    }
+
+    .oc-renew-course-selections .oc-course-checkbox .oc-course-name,
+    #oc-new-course-selections .oc-course-checkbox .oc-course-name {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+        text-align: left !important;
+        min-height: 18px !important;
+        height: auto !important;
+        align-self: start !important;
+        box-sizing: border-box !important;
+    }
+
+    .oc-renew-course-selections .oc-course-checkbox .oc-course-id,
+    #oc-new-course-selections .oc-course-checkbox .oc-course-id {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+        text-align: left !important;
+        min-height: 16px !important;
+        height: auto !important;
+        align-self: start !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* ========================================
+   🎯 HEADER ACTIONS - SEARCH & ADD CLIENT
+   ======================================== */
+
+/* Container principal header actions */
+.oc-header-actions {
+    width: 100% !important;
+    max-width: 98% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    margin-bottom: 20px !important;
+    padding: 15px !important;
+    background: #f8f9fa !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* Search container */
+.oc-search-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Search form - flex layout */
+.oc-search-form {
+    display: flex !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+}
+
+/* Search input */
+.oc-search-input {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    border: 2px solid #ddd !important;
+    border-radius: 6px !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.oc-search-input:focus {
+    border-color: #0073aa !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1) !important;
+}
+
+/* Search button - dimensiuni consistente cu sistemul */
+.oc-search-form .button-primary {
+    flex: 0 0 auto !important;
+    min-width: 120px !important;
+}
+
+/* Search/Reset/Add Client - modern color refresh */
+.oc-header-actions .oc-search-form .button-primary {
+    background: linear-gradient(135deg, #0f7dc2 0%, #095f95 100%) !important;
+    color: #fff !important;
+    border: 1px solid rgba(9, 95, 149, 0.95) !important;
+    box-shadow: 0 4px 12px rgba(15, 125, 194, 0.22) !important;
+}
+
+.oc-header-actions .oc-search-form .button-primary:hover {
+    background: linear-gradient(135deg, #0b6fae 0%, #074e7a 100%) !important;
+    box-shadow: 0 6px 16px rgba(15, 125, 194, 0.3) !important;
+}
+
+.oc-header-actions .oc-search-form .button:not(.button-primary) {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%) !important;
+    color: #fff !important;
+    border: 1px solid rgba(75, 85, 99, 0.95) !important;
+    box-shadow: 0 4px 12px rgba(75, 85, 99, 0.22) !important;
+}
+
+.oc-header-actions .oc-search-form .button:not(.button-primary):hover {
+    background: linear-gradient(135deg, #596170 0%, #3f4856 100%) !important;
+    box-shadow: 0 6px 16px rgba(75, 85, 99, 0.3) !important;
+}
+
+/* Add client button wrapper */
+.oc-add-client-button-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.oc-add-client-button-wrapper .oc-inline-form {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Add client button - full width */
+#oc-toggle-add-client-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    color: #fff !important;
+    border: 1px solid rgba(29, 78, 216, 0.95) !important;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25) !important;
+}
+
+#oc-toggle-add-client-form:hover {
+    background: linear-gradient(135deg, #1f57d3 0%, #1944bf 100%) !important;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.32) !important;
+}
+
+/* Responsive header actions */
+@media (max-width: 768px) {
+    .oc-header-actions {
+        gap: 12px !important;
+        padding: 12px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .oc-header-actions {
+        gap: 10px !important;
+        padding: 10px !important;
+    }
+    
+    .oc-search-form {
+        gap: 8px !important;
+    }
+    
+    .oc-search-form .button-primary {
+        min-width: 80px !important;
+    }
+}
+
+/* Mobile mic: search form vertical */
+@media (max-width: 400px) {
+    .oc-search-form {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    
+    .oc-search-input {
+        width: 100% !important;
+    }
+    
+    .oc-search-form .button-primary {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+
+/* ========================================
+   🎯 OVERFLOW PREVENTION - GLOBAL
+   ======================================== */
+
+/* Body și HTML - previne scroll horizontal */
+html,
+body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+}
+
+/* Toate containerele principale - no horizontal overflow */
+.oc-admin-table-container,
+.oc-admin-cards-container,
+.oc-admin-card,
+.oc-card-header,
+.oc-card-main-info,
+.oc-membership-info,
+.oc-package-section,
+.oc-courses-expandedlist,
+.oc-course-entry {
+    overflow-x: hidden !important;
+}
+
+/* Exception: course compact list poate avea scroll horizontal */
+.oc-courses-compact-list {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* Prevent text overflow */
+p, span, div, label, h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Specific override pentru elemente cu font-weight */
+div[style*="font-weight: 600"],
+div[style*="font-weight:600"] {
+    word-wrap: break-word !important;
+}
+
+/* ========================================
+   🎯 Z-INDEX FIX - PREVINE OVERLAP
+   ======================================== */
+
+/* Asigură că elementele nu se suprapun */
+.oc-package-section {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.oc-course-entry {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Status badges - asigură vizibilitate */
+.oc-status-badge {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Modals - cel mai sus */
+.oc-qr-modal,
+.oc-modal-overlay {
+    z-index: 9999 !important;
+}
+
+/* ========================================
+   🎯 COURSE COMPACT ITEMS - RESPONSIVE
+   ======================================== */
+
+/* Course compact items - COMPLETE STYLES RESPONSIVE */
+.oc-course-compact-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 5px 10px !important;
+    border-radius: 12px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-left: 3px solid #28a745 !important;
+    background: white !important;
+    min-width: 200px !important;
+    box-sizing: border-box !important;
+}
+
+/* Course name în compact item */
+.oc-course-compact-item .oc-course-name {
+    flex: 1 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+/* Course sessions în compact item */
+.oc-course-sessions {
+    flex-shrink: 0 !important;
+    font-weight: 700 !important;
+    color: #28a745 !important;
+}
+
+/* Mobile: reduce min-width progresiv */
+@media (max-width: 768px) {
+    .oc-course-compact-item {
+        min-width: 180px !important;
+        font-size: 11px !important;
+        padding: 4px 9px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-course-compact-item {
+        min-width: 160px !important;
+        font-size: 10px !important;
+        padding: 4px 8px !important;
+        gap: 4px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .oc-course-compact-item {
+        min-width: 140px !important;
+        font-size: 9px !important;
+        padding: 3px 6px !important;
+    }
+    
+    .oc-courses-compact-list {
+        gap: 4px !important;
+    }
+}
+
+/* ========================================
+   🎯 DEBUG NOTICES & INFO
+   ======================================== */
+
+/* Debug notice */
+.oc-debug-notice {
+    margin-bottom: 15px !important;
+    font-size: 12px !important;
+    opacity: 0.8 !important;
+}
+
+/* ========================================
+   🎯 STATUS BADGES - RESPONSIVE WIDTH AUTO
+   ======================================== */
+
+/* Status badges container - flex wrap pentru responsive */
+.oc-status-badges {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 15px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+/* Status badge base - WIDTH AUTO pentru dimensiune naturală */
+.oc-status-badge {
+    width: auto !important; /* NU full width! */
+    max-width: fit-content !important;
+    padding: 3px 15px !important;
+    border-radius: 20px !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    border: 1px solid !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    cursor: default !important;
+}
+
+/* Hover effect subtil */
+.oc-status-badge:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Status badge variants - culori distinctive */
+.oc-badge-pending {
+    background: #e7f3ff !important;
+    color: #0073aa !important;
+    border-color: #0073aa !important;
+}
+
+.oc-badge-expires-soon {
+    background: #fff3e0 !important;
+    color: #ff9800 !important;
+    border-color: #ff9800 !important;
+}
+
+.oc-badge-active {
+    background: #e8f5e9 !important;
+    color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.oc-badge-expired {
+    background: #ffebee !important;
+    color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+/* Tablet: reduce padding și gap */
+@media (max-width: 768px) {
+    .oc-status-badges {
+        gap: 8px !important;
+        margin: 12px 0 !important;
+    }
+    
+    .oc-status-badge {
+        padding: 7px 14px !important;
+        font-size: 13px !important;
+        border-width: 1.5px !important;
+    }
+}
+
+/* Mobile: mai compact dar vizibil */
+@media (max-width: 600px) {
+    .oc-status-badges {
+        gap: 6px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .oc-status-badge {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+        border-width: 1.5px !important;
+        border-radius: 16px !important;
+    }
+}
+
+/* Mobile mic: foarte compact */
+@media (max-width: 480px) {
+    .oc-status-badges {
+        gap: 5px !important;
+    }
+    
+    .oc-status-badge {
+        padding: 5px 10px !important;
+        font-size: 11px !important;
+        border-width: 1px !important;
+        border-radius: 14px !important;
+    }
+}
+
+/* Inline form */
+.oc-inline-form {
+    display: inline-block !important;
+}
+
+/* ========================================
+   🎯 START DATE INFO & VALIDITY
+   ======================================== */
+
+.oc-start-date-info {
+    font-size: 12px !important;
+    color: #666 !important;
+    margin-top: 6px !important;
+}
+
+.oc-start-date-value {
+    font-weight: 600 !important;
+    color: #333 !important;
+}
+
+/* ========================================
+   🎯 VIP UNLIMITED NOTICES
+   ======================================== */
+
+.oc-vip-unlimited-notice {
+    background: linear-gradient(135deg, #ecfdf3 0%, #dcfce7 100%) !important;
+    border: 1px solid #86efac !important;
+    border-radius: 10px !important;
+    padding: 12px 14px !important;
+    margin-top: 10px !important;
+    text-align: left !important;
+    box-shadow: 0 2px 8px rgba(22, 101, 52, 0.08) !important;
+}
+
+.oc-vip-text {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #166534 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.oc-vip-text .dashicons {
+    color: #16a34a !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+    line-height: 16px !important;
+}
+
+/* ========================================
+   🎯 FIELD INFO TEXT
+   ======================================== */
+
+.oc-field-info-text {
+    color: #666 !important;
+    display: block !important;
+    margin-top: 4px !important;
+    font-size: 12px !important;
+}
+
+/* ========================================
+   🎯 RENEW SUBSCRIPTION FORMS
+   ======================================== */
+
+.oc-renew-separator {
+    margin: 20px 0 !important;
+    border-top: 2px dashed #dee2e6 !important;
+}
+
+.oc-renew-subscription-form {
+    margin-top: 20px !important;
+    padding: 20px !important;
+    background: #f0f8ff !important;
+    border: 2px solid #0073aa !important;
+    border-radius: 8px !important;
+}
+
+.oc-renew-title {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #0073aa !important;
+    margin-bottom: 15px !important;
+}
+
+/* ========================================
+   🎯 ERROR & EMPTY MESSAGES
+   ======================================== */
+
+.oc-error-message {
+    color: #dc3545 !important;
+    padding: 12px !important;
+    background: #ffebee !important;
+    border: 1px solid #dc3545 !important;
+    border-radius: 4px !important;
+    margin: 10px 0 !important;
+}
+
+.oc-empty-message {
+    text-align: center !important;
+    padding: 20px !important;
+    color: #666 !important;
+    font-style: italic !important;
+}
+
+/* ========================================
+   🎯 EXPIRED MEMBERSHIPS HISTORY
+   ======================================== */
+
+.oc-expired-history-section {
+    margin: 30px 20px 20px 20px !important;
+    border-top: 2px dashed #dee2e6 !important;
+    padding-top: 20px !important;
+}
+
+.oc-expired-history-header {
+    cursor: pointer !important;
+    padding: 15px !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    border-radius: 8px !important;
+    border: 1px solid #dee2e6 !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 15px !important;
+}
+
+.oc-expired-history-header:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.oc-expired-header-inner {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.oc-expired-icon {
+    font-size: 24px !important;
+}
+
+.oc-expired-title {
+    flex: 1 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #495057 !important;
+}
+
+.oc-expired-badge {
+    background: #6c757d !important;
+    color: white !important;
+    padding: 4px 12px !important;
+    border-radius: 12px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+.oc-toggle-icon {
+    font-size: 20px !important;
+    color: #6c757d !important;
+    transition: transform 0.3s ease !important;
+}
+
+.oc-expired-history-content {
+    overflow: hidden !important;
+    transition: max-height 0.5s ease !important;
+}
+
+.oc-expired-empty {
+    text-align: center !important;
+    padding: 40px 20px !important;
+    color: #6c757d !important;
+}
+
+.oc-expired-empty-icon {
+    font-size: 48px !important;
+    margin-bottom: 16px !important;
+    opacity: 0.5 !important;
+}
+
+.oc-expired-empty-text {
+    font-size: 14px !important;
+    font-style: italic !important;
+}
+
+.oc-expired-membership-item {
+    background: white !important;
+    padding: 15px !important;
+    margin-bottom: 12px !important;
+    border-radius: 6px !important;
+    border: 1px solid #dee2e6 !important;
+    transition: all 0.2s ease !important;
+}
+
+.oc-expired-membership-item:hover {
+    border-color: #adb5bd !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.oc-expired-item-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #e9ecef !important;
+}
+
+.oc-expired-product-name {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #495057 !important;
+    flex: 1 !important;
+}
+
+/* Status badge per abonament istoric */
+.oc-expired-status-badge {
+    display: inline-block !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 2px 8px !important;
+    border-radius: 12px !important;
+    margin: 0 8px !important;
+    white-space: nowrap !important;
+}
+.oc-status-expired  { background: #fdecea !important; color: #c0392b !important; }
+.oc-status-cancelled { background: #fef3cd !important; color: #856404 !important; }
+.oc-status-refunded  { background: #d1ecf1 !important; color: #0c5460 !important; }
+.oc-status-failed    { background: #f8d7da !important; color: #721c24 !important; }
+.oc-status-inactive  { background: #e2e3e5 !important; color: #383d41 !important; }
+
+.oc-expired-price {
+    font-size: 13px !important;
+    color: #6c757d !important;
+    font-weight: 600 !important;
+}
+
+.oc-expired-dates-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin-bottom: 12px !important;
+}
+
+@media (max-width: 480px) {
+    .oc-expired-dates-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.oc-expired-date-item {
+    font-size: 12px !important;
+    color: #6c757d !important;
+}
+
+.oc-expired-date-item strong {
+    display: block !important;
+    color: #495057 !important;
+    margin-top: 2px !important;
+}
+
+.oc-expired-courses-section {
+    margin-top: 12px !important;
+    padding-top: 12px !important;
+    border-top: 1px dashed #dee2e6 !important;
+}
+
+.oc-expired-courses-title {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #6c757d !important;
+    margin-bottom: 8px !important;
+}
+
+.oc-expired-course-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 6px 10px !important;
+    background: #f8f9fa !important;
+    border-radius: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+.oc-expired-course-name {
+    font-size: 12px !important;
+    color: #495057 !important;
+    flex: 1 !important;
+}
+
+.oc-expired-course-sessions {
+    font-size: 11px !important;
+    color: #6c757d !important;
+    font-weight: 600 !important;
+}
+
+.oc-expired-order-link {
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+    border-top: 1px dashed #dee2e6 !important;
+    font-size: 11px !important;
+}
+
+.oc-order-link {
+    color: #0073aa !important;
+    text-decoration: none !important;
+}
+
+.oc-order-link:hover {
+    text-decoration: underline !important;
+}
+
+/* ========================================
+   FINAL UI POLISH OVERRIDES (ADMIN TABLE)
+   ======================================== */
+
+/* 1) Header actions: Caută / Resetează / Adaugă client nou */
+.oc-admin-table-container .oc-header-actions .oc-search-form .button.button-primary {
+    background: linear-gradient(135deg, #0e7ab2 0%, #095f8d 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid #0a6e9f !important;
+    box-shadow: 0 5px 12px rgba(0, 115, 170, 0.24) !important;
+}
+
+.oc-admin-table-container .oc-header-actions .oc-search-form .button.button-primary:hover {
+    background: linear-gradient(135deg, #0c6e9f 0%, #085277 100%) !important;
+    box-shadow: 0 7px 16px rgba(0, 115, 170, 0.3) !important;
+}
+
+.oc-admin-table-container .oc-header-actions .oc-search-form .button:not(.button-primary) {
+    background: #f3f4f6 !important;
+    color: #374151 !important;
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 2px 6px rgba(55, 65, 81, 0.12) !important;
+}
+
+.oc-admin-table-container .oc-header-actions .oc-search-form .button:not(.button-primary):hover {
+    background: #e5e7eb !important;
+    color: #1f2937 !important;
+    border-color: #c4c9d1 !important;
+}
+
+.oc-admin-table-container .oc-header-actions #oc-toggle-add-client-form {
+    background: linear-gradient(135deg, #2f9a60 0%, #23764a 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid #288956 !important;
+    box-shadow: 0 7px 16px rgba(45, 138, 87, 0.28) !important;
+}
+
+.oc-admin-table-container .oc-header-actions #oc-toggle-add-client-form:hover {
+    background: linear-gradient(135deg, #298451 0%, #205f3e 100%) !important;
+    box-shadow: 0 9px 20px rgba(45, 138, 87, 0.34) !important;
+}
+
+/* 2) Action buttons in cards: Detalii on top, Validează + QR on same row */
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-areas:
+        'info info'
+        'validate qr' !important;
+    width: 100% !important;
+    gap: 8px !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-info {
+    grid-area: info !important;
+    width: 100% !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-validate,
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-qr {
+    width: 100% !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-validate {
+    grid-area: validate !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-qr {
+    grid-area: qr !important;
+}
+
+/* Discreet modern look for card action buttons (same base colors, less aggressive) */
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-info,
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-validate,
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-qr {
+    border-radius: 10px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    box-shadow: 0 2px 7px rgba(17, 24, 39, 0.12) !important;
+    transform: none !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-info {
+    background: #dceffc !important;
+    color: #095f8d !important;
+    border-color: #8ec8e8 !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-info:hover {
+    background: #cfe8fa !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-validate {
+    background: #dbf0e4 !important;
+    color: #1d7d46 !important;
+    border-color: #93d0aa !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-validate:hover {
+    background: #cfe8db !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-qr {
+    background: #ffeacc !important;
+    color: #b76500 !important;
+    border-color: #efbe7e !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-qr:hover {
+    background: #ffe2bb !important;
+}
+
+@media (max-width: 768px) {
+    .oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            'info'
+            'validate'
+            'qr' !important;
+    }
+
+    .oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-validate,
+    .oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-qr {
+        font-size: 13px !important;
+        padding: 9px 12px !important;
+    }
+}
+
+/* 3) Unified strong color system for ALL admin-table buttons */
+.oc-admin-table-container .oc-btn,
+.oc-admin-table-container .button {
+    border-radius: 10px !important;
+    border: 1px solid transparent !important;
+}
+
+.oc-admin-table-container .oc-btn-primary,
+.oc-admin-table-container .button.button-primary,
+.oc-admin-table-container .oc-btn-info,
+.oc-admin-table-container .oc-btn-activate-membership {
+    background: linear-gradient(135deg, #0e7ab2 0%, #095f8d 100%) !important;
+    color: #ffffff !important;
+    border-color: #0a6e9f !important;
+}
+
+.oc-admin-table-container .oc-btn-primary:hover,
+.oc-admin-table-container .button.button-primary:hover,
+.oc-admin-table-container .oc-btn-info:hover,
+.oc-admin-table-container .oc-btn-activate-membership:hover {
+    background: linear-gradient(135deg, #0c6e9f 0%, #085277 100%) !important;
+}
+
+.oc-admin-table-container .oc-btn-success,
+.oc-admin-table-container #oc-toggle-add-client-form {
+    background: linear-gradient(135deg, #2f9a60 0%, #23764a 100%) !important;
+    color: #ffffff !important;
+    border-color: #288956 !important;
+}
+
+.oc-admin-table-container .oc-btn-success:hover,
+.oc-admin-table-container #oc-toggle-add-client-form:hover {
+    background: linear-gradient(135deg, #298451 0%, #205f3e 100%) !important;
+}
+
+/* Differentiate Abonament Nou vs Salvează Date */
+.oc-admin-table-container .oc-btn-add-subscription {
+    background: linear-gradient(135deg, #1f7ec1 0%, #155f93 100%) !important;
+    color: #ffffff !important;
+    border-color: #186fa9 !important;
+}
+
+.oc-admin-table-container .oc-btn-add-subscription:hover {
+    background: linear-gradient(135deg, #1b6fa9 0%, #124f7b 100%) !important;
+}
+
+.oc-admin-table-container .oc-btn-save-member {
+    background: linear-gradient(135deg, #2f9a60 0%, #23764a 100%) !important;
+    color: #ffffff !important;
+    border-color: #288956 !important;
+}
+
+.oc-admin-table-container .oc-btn-save-member:hover {
+    background: linear-gradient(135deg, #298451 0%, #205f3e 100%) !important;
+}
+
+.oc-admin-table-container .oc-btn-warning,
+.oc-admin-table-container .oc-btn-qr {
+    background: linear-gradient(135deg, #f2a12c 0%, #d98512 100%) !important;
+    color: #ffffff !important;
+    border-color: #dc911f !important;
+}
+
+.oc-admin-table-container .oc-edit-active-membership-btn {
+    white-space: nowrap;
+}
+
+.oc-admin-table-container .oc-form-actions-protected {
+    margin-top: -44px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .oc-admin-table-container .oc-card-details .oc-form-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .oc-admin-table-container .oc-card-details .oc-form-actions > .oc-btn,
+    .oc-admin-table-container .oc-card-details .oc-form-actions > button,
+    .oc-admin-table-container .oc-card-details .oc-form-actions > .button {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        white-space: normal !important;
+    }
+
+    .oc-admin-table-container .oc-card-details .oc-form-actions-protected {
+        margin-top: 10px !important;
+        justify-content: stretch !important;
+        width: 100% !important;
+    }
+
+    .oc-admin-table-container .oc-card-details .oc-form-actions-protected > .oc-btn,
+    .oc-admin-table-container .oc-card-details .oc-form-actions-protected > button,
+    .oc-admin-table-container .oc-card-details .oc-form-actions-protected > .button {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center !important;
+        white-space: normal !important;
+    }
+}
+
+.oc-admin-table-container .oc-edit-active-membership-btn {
+    background: #6f7b86 !important;
+    color: #ffffff !important;
+    border-color: #66727d !important;
+}
+
+.oc-admin-table-container .oc-edit-active-membership-btn:hover {
+    background: #626d77 !important;
+    border-color: #59646e !important;
+}
+
+.oc-inline-confirm-pin-input {
+    width: 100%;
+    margin-top: 2px;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid #cfd8e3;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.oc-inline-confirm-pin-input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.14);
+}
+
+.oc-inline-confirm-error {
+    margin-top: 8px;
+    color: #dc3545;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.oc-admin-table-container .oc-btn-warning:hover,
+.oc-admin-table-container .oc-btn-qr:hover {
+    background: linear-gradient(135deg, #df941f 0%, #c2750f 100%) !important;
+}
+
+.oc-admin-table-container .oc-btn-danger,
+.oc-admin-table-container .oc-btn-cancel-membership,
+.oc-admin-table-container .oc-btn-cancel-edit {
+    background: linear-gradient(135deg, #d94b57 0%, #b92e3a 100%) !important;
+    color: #ffffff !important;
+    border-color: #c53b47 !important;
+}
+
+.oc-admin-table-container .oc-btn-danger:hover,
+.oc-admin-table-container .oc-btn-cancel-membership:hover,
+.oc-admin-table-container .oc-btn-cancel-edit:hover {
+    background: linear-gradient(135deg, #c9414d 0%, #a92733 100%) !important;
+}
+
+.oc-admin-table-container .oc-btn-secondary,
+.oc-admin-table-container .button:not(.button-primary) {
+    background: #f3f4f6 !important;
+    color: #374151 !important;
+    border-color: #d1d5db !important;
+}
+
+.oc-admin-table-container .oc-btn-secondary:hover,
+.oc-admin-table-container .button:not(.button-primary):hover {
+    background: #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-info {
+    background: linear-gradient(135deg, #0e7ab2 0%, #095f8d 100%) !important;
+    color: #ffffff !important;
+    border-color: #0a6e9f !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-info:hover {
+    background: linear-gradient(135deg, #0c6e9f 0%, #085277 100%) !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-validate {
+    background: linear-gradient(135deg, #2f9a60 0%, #23764a 100%) !important;
+    color: #ffffff !important;
+    border-color: #288956 !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-validate:hover {
+    background: linear-gradient(135deg, #298451 0%, #205f3e 100%) !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-qr {
+    background: linear-gradient(135deg, #f2a12c 0%, #d98512 100%) !important;
+    color: #ffffff !important;
+    border-color: #dc911f !important;
+}
+
+.oc-admin-table-container .oc-admin-card .oc-card-actions .oc-action-buttons .oc-btn-qr:hover {
+    background: linear-gradient(135deg, #df941f 0%, #c2750f 100%) !important;
+}
+
+/* Unified icon model/size */
+.oc-admin-table-container .oc-btn .dashicons,
+.oc-admin-table-container .button .dashicons {
+    display: inline-block !important;
+    font-family: dashicons !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    speak: never !important;
+    font-size: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+    line-height: 14px !important;
+}
+
+.oc-admin-table-container .oc-search-form .button.button-primary .dashicons,
+.oc-admin-table-container #oc-toggle-add-client-form .dashicons,
+.oc-admin-table-container .oc-btn-submit-renew .dashicons {
+    margin-right: 6px !important;
+    vertical-align: middle !important;
+}
+
+/* ========================================
+   FINAL MOBILE LAYOUT STABILIZATION (NO DESKTOP IMPACT)
+   ======================================== */
+@media (max-width: 768px) {
+    .woocommerce-account .woocommerce-MyAccount-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        float: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+    .woocommerce-account .woocommerce-MyAccount-content > .oc-admin-table-container {
+        width: 98% !important;
+        max-width: 98% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-top: 10px !important;
+    }
+
+    .page_content_wrap,
+    .oc-admin-form,
+    .oc-admin-form-1,
+    .oc-admin-table-container {
+        width: 98% !important;
+        max-width: 98% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+    .oc-admin-cards-container,
+    .oc-admin-cards-grid,
+    .oc-admin-card,
+    .oc-card-content,
+    .oc-card-body,
+    .oc-membership-info,
+    .oc-card-actions,
+    .oc-form-row,
+    .oc-form-group,
+    .oc-full-width {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .oc-card-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: stretch !important;
+    }
+
+    .oc-membership-info {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .oc-card-actions {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        align-items: stretch !important;
+    }
+
+    .oc-status-badges {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        margin: 10px 0 14px !important;
+    }
+
+    .oc-status-badges .oc-status-badge {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 36px !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 8px 10px !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+    }
+
+    .oc-admin-table-container h2,
+    .woocommerce-account .woocommerce-MyAccount-content h2 {
+        font-size: 20px !important;
+        line-height: 1.25 !important;
+        margin: 8px 10px 12px !important;
+        padding: 0 4px !important;
+        word-break: break-word !important;
+    }
+
+    .oc-header-actions {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 14px !important;
+        padding: 12px !important;
+        border-radius: 10px !important;
+        gap: 10px !important;
+    }
+
+    .oc-search-container,
+    .oc-search-form {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .oc-search-form {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+    }
+
+    .oc-search-input {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        min-height: 44px !important;
+    }
+
+    .oc-search-form .button,
+    .oc-search-form .button-primary,
+    .oc-search-form a.button {
+        flex: 1 1 calc(50% - 4px) !important;
+        width: calc(50% - 4px) !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        min-height: 44px !important;
+        margin: 0 !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    .oc-add-client-button-wrapper,
+    .oc-add-client-button-wrapper .oc-inline-form,
+    #oc-toggle-add-client-form {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #oc-toggle-add-client-form {
+        min-height: 46px !important;
+        margin: 0 !important;
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .oc-status-badges {
+        grid-template-columns: 1fr !important;
+    }
+
+    .oc-search-form .button,
+    .oc-search-form .button-primary,
+    .oc-search-form a.button {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body.woocommerce-account .woocommerce-MyAccount-content,
+    body.woocommerce-account .woocommerce-MyAccount-content .page_content_wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        float: none !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .page_content_wrap {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container {
+        width: calc(100vw - 4px) !important;
+        max-width: calc(100vw - 4px) !important;
+        min-width: calc(100vw - 4px) !important;
+        margin: 8px 2px 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        float: none !important;
+        box-sizing: border-box !important;
+    }
+
+    .page_content_wrap .oc-admin-table-container,
+    .woocommerce-MyAccount-content .oc-admin-table-container {
+        width: calc(100vw - 4px) !important;
+        max-width: calc(100vw - 4px) !important;
+        min-width: calc(100vw - 4px) !important;
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+
+
+/* ========================================
+   MOBILE RECOVERY LAYOUT (KEEP 2PX GUTTERS)
+   ======================================== */
+@media (max-width: 768px) {
+    body.woocommerce-account .woocommerce-MyAccount-content,
+    body.woocommerce-account .woocommerce-MyAccount-content .page_content_wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 2px !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        float: none !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container,
+    .page_content_wrap .oc-admin-table-container,
+    .woocommerce-MyAccount-content .oc-admin-table-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 8px 0 0 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        float: none !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-table-header {
+        margin: 0 0 12px 0 !important;
+        padding: 0 6px 12px 6px !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-status-badges {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        margin: 8px 0 12px 0 !important;
+        padding: 0 2px !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-status-badges .oc-status-badge {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        min-height: 36px !important;
+        justify-content: center !important;
+        text-align: center !important;
+        white-space: normal !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-header-actions {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 12px 0 !important;
+        padding: 10px 6px !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        align-items: stretch !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-input {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form .button,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form .button-primary,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form a.button {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        justify-content: center !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container #oc-toggle-add-client-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 520px) {
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-status-badges,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ========================================
+   MOBILE FULL WIDTH: PENDING + RENEW FORMS
+   ======================================== */
+@media (max-width: 768px) {
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-admin-card,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-admin-card.status-pending,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-renew-container,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-renew-subscription-form,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container fieldset.oc-form-section,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-form-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-admin-card,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-admin-card.status-pending {
+        padding: 8px 6px !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-renew-container,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-renew-subscription-form,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container fieldset.oc-form-section {
+        padding: 8px 6px !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-form-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        padding: 0 !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-form-grid > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-courses-expandedlist {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-width: 0 !important;
+        border-radius: 0 !important;
+    }
+}
+
+/* ========================================
+   MOBILE DE-LAYERING: USE SCREEN WIDTH
+   ======================================== */
+@media (max-width: 768px) {
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-admin-form,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-admin-form-1,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-courses-expandedlist {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-package-section {
+        margin: 0 0 10px 0 !important;
+        padding: 8px 6px !important;
+        border-radius: 6px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-course-entry {
+        margin: 0 0 8px 0 !important;
+        padding: 8px 6px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-form-row,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-form-group,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-full-width {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-table-header {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 14px 0 !important;
+        padding: 0 6px 12px 6px !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-table-header .oc-status-badges {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 8px 0 12px 0 !important;
+        padding: 0 2px !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-table-header .oc-status-badge {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-header-actions,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form .button,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form .button-primary,
+    body.woocommerce-account .woocommerce-MyAccount-content .oc-admin-table-container .oc-search-form a.button {
+        flex: 1 1 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+}

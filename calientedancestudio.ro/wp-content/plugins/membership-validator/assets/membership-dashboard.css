@@ -1,0 +1,983 @@
+/**
+ * Membership Dashboard CSS - BEST PRACTICES 2025
+ * 
+ * Modern CSS cu Grid, Flexbox, Custom Properties
+ * Responsive, Accessible, Progressive Enhancement
+ * 
+ * @package MembershipValidator
+ * @since 1.2.0
+ */
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (CSS Variables)
+   ======================================== */
+
+:root {
+    /* Gradiente principale */
+    --oc-primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --oc-vip-gradient: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+    --oc-package-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    
+    /* Shadows */
+    --oc-card-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    --oc-card-shadow-hover: 0 6px 16px rgba(0,0,0,0.12);
+    --oc-card-shadow-active: 0 8px 24px rgba(0,0,0,0.15);
+    
+    /* Colors */
+    --oc-border-color: #e0e0e0;
+    --oc-text-primary: #333;
+    --oc-text-secondary: #666;
+    --oc-text-muted: #999;
+    --oc-background-light: #f8f9fa;
+    --oc-background-white: #ffffff;
+    
+    /* Spacing */
+    --oc-border-radius: 10px;
+    --oc-spacing-xs: 5px;
+    --oc-spacing-sm: 10px;
+    --oc-spacing-md: 20px;
+    --oc-spacing-lg: 30px;
+    
+    /* Transitions */
+    --oc-transition: all 0.3s ease;
+    --oc-transition-fast: all 0.15s ease;
+    
+    /* Z-index layers */
+    --oc-z-card: 1;
+    --oc-z-overlay: 10;
+    --oc-z-modal: 100;
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL
+   ======================================== */
+
+.oc-membership-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--oc-spacing-md);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ========================================
+   CARD PACHET (Hero Card)
+   ======================================== */
+
+.oc-package-card {
+    background: var(--oc-package-gradient);
+    color: white;
+    padding: var(--oc-spacing-lg);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.oc-package-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: var(--oc-z-card);
+}
+
+.package-header h2 {
+    margin: 0;
+    color: white;
+    font-size: clamp(20px, 4vw, 24px);
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.package-price {
+    font-size: clamp(22px, 5vw, 28px);
+    font-weight: bold;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.package-meta {
+    display: flex;
+    gap: var(--oc-spacing-md);
+    flex-wrap: wrap;
+    font-size: 14px;
+    opacity: 0.95;
+    position: relative;
+    z-index: var(--oc-z-card);
+}
+
+.package-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ========================================
+   GRID CURSURI (CSS Grid Layout)
+   ======================================== */
+
+.oc-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--oc-spacing-md);
+    margin-bottom: 40px;
+}
+
+/* ========================================
+   CARD CURS
+   ======================================== */
+
+.oc-course-card {
+    background: var(--oc-background-white);
+    border: 1px solid var(--oc-border-color);
+    border-radius: var(--oc-border-radius);
+    padding: var(--oc-spacing-md);
+    box-shadow: var(--oc-card-shadow);
+    transition: var(--oc-transition);
+    position: relative;
+    cursor: pointer;
+}
+
+.oc-course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--oc-card-shadow-hover);
+}
+
+.oc-course-card:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.oc-course-card:active {
+    transform: translateY(-2px);
+    box-shadow: var(--oc-card-shadow-active);
+}
+
+/* VIP Unlimited Card */
+.oc-course-card.vip-unlimited {
+    border: 2px solid #4caf50;
+    background: linear-gradient(135deg, #f0fff4 0%, #e8f5e9 100%);
+}
+
+.oc-course-card.vip-unlimited::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--oc-vip-gradient);
+    border-radius: var(--oc-border-radius) var(--oc-border-radius) 0 0;
+}
+
+/* ========================================
+   COURSE NAME
+   ======================================== */
+
+.course-name {
+    display: flex;
+    align-items: center;
+    gap: var(--oc-spacing-sm);
+    margin-bottom: var(--oc-spacing-md);
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--oc-border-color);
+}
+
+.course-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.course-name strong {
+    font-size: 16px;
+    color: var(--oc-text-primary);
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* ========================================
+   UNLIMITED BADGE
+   ======================================== */
+
+.unlimited-badge {
+    background: var(--oc-vip-gradient);
+    color: white;
+    padding: var(--oc-spacing-md);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.unlimited-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: var(--oc-spacing-sm);
+    font-weight: bold;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.unlimited-text {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   PROGRESS SECTION
+   ======================================== */
+
+.progress-section {
+    margin-top: var(--oc-spacing-xs);
+}
+
+.sessions-info {
+    display: flex;
+    align-items: baseline;
+    gap: var(--oc-spacing-xs);
+    margin-bottom: var(--oc-spacing-sm);
+}
+
+.sessions-remaining {
+    font-size: clamp(30px, 7vw, 36px);
+    font-weight: bold;
+    color: #667eea;
+    line-height: 1;
+    transition: var(--oc-transition-fast);
+}
+
+.sessions-remaining[data-remaining="0"] {
+    color: #dc3232;
+}
+
+.sessions-remaining[data-remaining="1"],
+.sessions-remaining[data-remaining="2"] {
+    color: #f0b849;
+}
+
+.sessions-separator {
+    font-size: 24px;
+    color: var(--oc-text-muted);
+}
+
+.sessions-total {
+    font-size: 24px;
+    color: var(--oc-text-secondary);
+}
+
+.sessions-label {
+    font-size: 14px;
+    color: var(--oc-text-secondary);
+    margin-left: var(--oc-spacing-xs);
+}
+
+/* ========================================
+   PROGRESS BAR
+   ======================================== */
+
+.progress-bar-wrapper {
+    margin-bottom: 8px;
+}
+
+.oc-progress-bar {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    border: none;
+    background: var(--oc-border-color);
+    overflow: hidden;
+}
+
+.oc-progress-bar::-webkit-progress-bar {
+    background: var(--oc-border-color);
+    border-radius: 5px;
+}
+
+.oc-progress-bar::-webkit-progress-value {
+    background: var(--oc-primary-gradient);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.oc-progress-bar::-moz-progress-bar {
+    background: var(--oc-primary-gradient);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.sessions-used-label {
+    text-align: right;
+    color: var(--oc-text-muted);
+    font-size: 12px;
+}
+
+/* ========================================
+   NO MEMBERSHIPS STATE
+   ======================================== */
+
+.oc-no-memberships {
+    text-align: center;
+    padding: 60px var(--oc-spacing-md);
+    background: var(--oc-background-light);
+    border-radius: 8px;
+}
+
+.oc-no-memberships p {
+    font-size: 18px;
+    color: var(--oc-text-secondary);
+    margin-bottom: var(--oc-spacing-md);
+}
+
+.oc-no-memberships .button {
+    font-size: 16px;
+    padding: 12px 24px;
+}
+
+/* ========================================
+   LOADING & ANIMATION STATES
+   ======================================== */
+
+.oc-course-card.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.oc-course-card.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #667eea;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.oc-course-card.updated {
+    animation: cardUpdate 2s ease;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes cardUpdate {
+    0%, 100% { background: var(--oc-background-white); }
+    50% { background: #f0fff4; }
+}
+
+/* Fade-in animation pentru carduri */
+.oc-course-card.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.oc-course-card.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .oc-courses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .package-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--oc-spacing-sm);
+    }
+    
+    .package-price {
+        font-size: 22px;
+    }
+    
+    .oc-membership-dashboard {
+        padding: 15px;
+    }
+    
+    .oc-package-card {
+        padding: var(--oc-spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .package-meta {
+        flex-direction: column;
+        gap: var(--oc-spacing-xs);
+    }
+    
+    .sessions-remaining {
+        font-size: 28px;
+    }
+    
+    .sessions-total {
+        font-size: 20px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .oc-course-card:hover {
+        transform: none;
+    }
+    
+    .unlimited-icon {
+        animation: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .oc-course-card {
+        border: 2px solid var(--oc-text-primary);
+    }
+    
+    .oc-package-card {
+        border: 2px solid white;
+    }
+}
+
+/* Dark mode support (future-proof) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --oc-background-white: #2d2d2d;
+        --oc-background-light: #1a1a1a;
+        --oc-text-primary: #ffffff;
+        --oc-text-secondary: #cccccc;
+        --oc-text-muted: #999999;
+        --oc-border-color: #444444;
+    }
+    
+    .oc-course-card {
+        background: var(--oc-background-white);
+    }
+}
+
+/* ========================================
+   🎯 RENEWAL SYSTEM - Status Cards (v1.3.0)
+   ======================================== */
+
+/* Card variations per status */
+.oc-card-pending {
+    border-left: 4px solid #0073aa !important;
+    background: #f0f8ff !important;
+}
+
+.oc-card-active {
+    border-left: 4px solid #28a745 !important;
+    background: #ffffff !important;
+}
+
+.oc-card-active.expires-soon {
+    border-left: 4px solid #ff9800 !important;
+    background: #fff3e0 !important;
+}
+
+.oc-card-expired {
+    border-left: 4px solid #dc3545 !important;
+    background: #fff5f5 !important;
+    opacity: 0.85;
+}
+
+/* Status badges */
+.oc-status-pending {
+    background: #0073aa !important;
+    color: #ffffff !important;
+}
+
+.oc-status-active {
+    background: #28a745 !important;
+    color: #ffffff !important;
+}
+
+.oc-status-active.expires-soon {
+    background: #ff9800 !important;
+    color: #ffffff !important;
+}
+
+.oc-status-expired {
+    background: #dc3545 !important;
+    color: #ffffff !important;
+}
+
+/* Pending info box */
+.oc-pending-info {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.oc-pending-info small {
+    line-height: 1.6;
+}
+
+/* Progress bar variations */
+.oc-progress-pending {
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Expired cards - reduced prominence */
+.oc-card-expired .oc-card-header h3 {
+    color: #999 !important;
+}
+
+.oc-card-expired .oc-progress-bar {
+    background: #ddd !important;
+}
+
+.oc-card-expired .oc-progress-fill {
+    background: #999 !important;
+}
+
+/* New badge for pending */
+.oc-new-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Expiry warnings */
+.oc-expires-soon {
+    color: #ffc107 !important;
+}
+
+.oc-expires-ok {
+    color: #28a745 !important;
+}
+
+/* ========================================
+   🎯 QR CODE SECTION & MODAL
+   ======================================== */
+
+/* QR Section în Card */
+.oc-qr-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--oc-border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* QR Preview Container */
+.oc-qr-preview-container {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border: 2px solid var(--oc-border-color);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: var(--oc-transition);
+}
+
+.oc-qr-preview-container:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    transform: scale(1.05);
+}
+
+.oc-qr-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* QR Button */
+.oc-btn-show-qr {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--oc-transition);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.oc-btn-show-qr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.oc-btn-show-qr:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   QR MODAL FULL-SCREEN
+   ======================================== */
+
+.oc-qr-modal {
+    display: none;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: var(--oc-z-modal) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* Modal Overlay */
+.oc-qr-modal-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(15, 23, 42, 0.64) !important;
+    backdrop-filter: blur(4px) !important;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.oc-qr-modal-open .oc-qr-modal-overlay {
+    opacity: 1;
+}
+
+/* Modal Content */
+.oc-qr-modal-content {
+    position: relative !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 16px !important;
+    max-width: 640px !important;
+    width: 100% !important;
+    max-height: min(90vh, 820px) !important;
+    overflow-y: auto !important;
+    box-shadow: 0 24px 64px rgba(15, 23, 42, 0.3) !important;
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: calc(var(--oc-z-modal) + 1) !important;
+    box-sizing: border-box !important;
+}
+
+.oc-qr-modal-open .oc-qr-modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* Close Button */
+/* Top-right action bar: download + close */
+.oc-qr-modal-top-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.oc-qr-download-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(26, 115, 232, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a73e8;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--oc-transition);
+    line-height: 1;
+}
+
+.oc-qr-download-btn:hover {
+    background: rgba(26, 115, 232, 0.25);
+    color: #1557b0;
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.oc-qr-modal-close {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--oc-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.oc-qr-modal-close:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: #333;
+    transform: rotate(90deg);
+}
+
+/* Modal Header */
+.oc-qr-modal-header {
+    padding: 28px 26px 16px !important;
+    text-align: center;
+    border-bottom: 1px solid var(--oc-border-color) !important;
+}
+
+.oc-qr-modal-header h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: var(--oc-text-primary);
+}
+
+.oc-qr-subtitle {
+    margin: 0;
+    font-size: 14px;
+    color: var(--oc-text-secondary);
+}
+
+/* Modal Body */
+.oc-qr-modal-body {
+    padding: 20px 26px 26px !important;
+    box-sizing: border-box !important;
+}
+
+/* QR Image Container */
+.oc-qr-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+}
+
+.oc-qr-image {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    display: block;
+    border: 4px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Info Grid */
+.oc-qr-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.oc-qr-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 12px;
+    background: var(--oc-background-light);
+    border-radius: 8px;
+}
+
+.oc-qr-info-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--oc-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.oc-qr-info-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--oc-text-primary);
+}
+
+/* Instructions */
+.oc-qr-instructions {
+    padding: 20px;
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.oc-qr-instructions p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--oc-text-primary);
+}
+
+.oc-qr-instructions p:last-child {
+    margin-bottom: 0;
+}
+
+.oc-qr-note {
+    font-size: 12px !important;
+    color: var(--oc-text-secondary) !important;
+    font-style: italic;
+}
+
+/* ========================================
+   QR RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* QR Preview în Card - mai mic pe mobile */
+    .oc-qr-preview-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Modal ocupa tot ecranul pe mobile */
+    .oc-qr-modal {
+        padding: 10px !important;
+    }
+    
+    .oc-qr-modal-content {
+        max-width: 100% !important;
+        max-height: 92vh !important;
+        border-radius: 12px !important;
+        height: auto !important;
+    }
+
+    .oc-qr-modal-header {
+        padding: 20px 14px 12px !important;
+    }
+
+    .oc-qr-modal-body {
+        padding: 14px 14px 16px !important;
+    }
+    
+    /* QR Image mai mare pe mobile */
+    .oc-qr-image {
+        max-width: 280px;
+        width: 90%;
+    }
+    
+    /* Info Grid stacked pe mobile */
+    .oc-qr-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Close button mai mare pe mobile */
+    .oc-qr-modal-close {
+        width: 48px;
+        height: 48px;
+        font-size: 28px;
+    }
+
+}
+
+/* ========================================
+   QR ANIMATIONS
+   ======================================== */
+
+@keyframes qr-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.oc-qr-preview-container:hover .oc-qr-preview-img {
+    animation: qr-pulse 1s ease-in-out infinite;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .oc-package-card,
+    .oc-course-card {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .oc-course-card:hover {
+        transform: none;
+    }
+    
+    /* Hide pending/expired in print */
+    .oc-card-pending,
+    .oc-card-expired {
+        display: none;
+    }
+}
+

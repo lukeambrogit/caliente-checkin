@@ -1,0 +1,221 @@
+/**
+ * Frontend CSS pentru Orar Cursuri - Versiune Simplă
+ * Stiluri DOAR pentru butoanele de control, fără modificări la aspectul original
+ */
+
+/* Stiluri pentru controalele simple - NU modifică aspectul original */
+
+/* Controale globale simple */
+.oc-simple-controls {
+  max-width: 800px !important;
+  margin: 20px auto 16px auto !important; /* Măresc marginea de sus pentru spațiu */
+  padding: 0 12px !important;
+  display: block !important;
+  border-top: 1px solid var(--border, #e5e7eb) !important; /* Linie de separare */
+  padding-top: 16px !important; /* Spațiu după linie */
+}
+
+.oc-toggle-all-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  padding: 12px 16px !important;
+  background: var(--brand, #e63946) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  justify-content: center !important;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif !important;
+}
+
+.oc-toggle-all-btn:hover {
+  background: color-mix(in srgb, var(--brand, #e63946) 85%, black) !important;
+  transform: translateY(-1px) !important;
+}
+
+.oc-toggle-all-btn:active {
+  transform: translateY(0) !important;
+}
+
+/* Stiluri pentru badge-urile clickable - integrare elegantă */
+.badge[data-toggle-day] {
+  cursor: pointer !important;
+  user-select: none !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+  /* Îmbunătățiri pentru tooltip */
+  border-radius: 6px !important;
+  padding: 6px 8px !important;
+}
+
+.badge[data-toggle-day]:hover {
+  background: color-mix(in srgb, var(--brand, #e63946) 90%, white) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.badge[data-toggle-day]:active {
+  transform: translateY(0) !important;
+}
+
+/* Iconița de toggle în badge */
+.oc-day-toggle-icon {
+  display: inline-block !important;
+  transition: transform 0.3s ease !important;
+  vertical-align: middle !important;
+  margin-left: 4px !important;
+}
+
+/* Textul ajutător simplu */
+.oc-help-text {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: currentColor !important;
+  opacity: 0.7 !important;
+  margin-left: 3px !important;
+  text-transform: lowercase !important;
+}
+
+.oc-day-toggle-icon svg {
+  transition: transform 0.3s ease !important;
+  vertical-align: middle !important;
+}
+
+/* Iconiță pentru starea extinsă (X) */
+.badge[data-state="expanded"] .oc-day-toggle-icon svg {
+  /* X pentru extins - se setează prin JS */
+}
+
+/* Iconiță pentru starea restrânsă (săgeată în jos) - poziția normală */
+.badge[data-state="collapsed"] .oc-day-toggle-icon svg {
+  transform: rotate(0deg) !important;
+  /* Săgeată în jos pentru restrâns - poziția normală */
+}
+
+/* Stiluri pentru master card-ul (primul card din zi) */
+.card.oc-day-master {
+  position: relative !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  user-select: none !important;
+}
+
+.card.oc-day-master::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -2px !important;
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  border: 2px solid transparent !important;
+  border-radius: inherit !important;
+  transition: border-color 0.2s ease !important;
+  pointer-events: none !important;
+}
+
+.card.oc-day-master:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+.card.oc-day-master:hover::after {
+  border-color: var(--brand, #e63946) !important;
+  opacity: 0.5 !important;
+}
+
+.card.oc-day-master:active {
+  transform: translateY(0) !important;
+}
+
+/* Stiluri pentru cardul collapsed - ascunde conținutul */
+.card.oc-collapsed-card .rooms {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.card.oc-collapsed-card .top .badge:not(:first-child) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Asigură-te că primul badge (ziua) rămâne vizibil */
+.card.oc-collapsed-card .top .badge:first-child {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Animații pentru carduri - doar show/hide simplu */
+.card[data-day] {
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.card[data-day][style*="display: none"] {
+  opacity: 0 !important;
+  transform: translateY(-5px) !important;
+}
+
+/* Controalele sunt vizibile DOAR pe mobil */
+@media (min-width: 900px) {
+  .oc-simple-controls {
+    display: none !important;
+  }
+  
+  /* Pe desktop, badge-urile nu sunt clickable */
+  .badge[data-toggle-day] {
+    cursor: default !important;
+  }
+  
+  .oc-day-toggle-icon {
+    display: none !important;
+  }
+}
+
+/* Pe mobil, asigură-te că controalele sunt vizibile */
+@media (max-width: 899px) {
+  .oc-simple-controls {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .oc-toggle-all-btn {
+    display: flex !important;
+  }
+  
+  /* Pe mobil, badge-urile sunt interactive */
+  .badge[data-toggle-day] {
+    cursor: pointer !important;
+  }
+  
+  .oc-day-toggle-icon {
+    display: inline-block !important;
+  }
+}
+
+/* Animații pentru performanță optimă */
+@media (prefers-reduced-motion: reduce) {
+  .oc-toggle-all-btn,
+  .oc-day-btn,
+  .oc-toggle-icon,
+  .card[data-day] {
+    transition: none !important;
+  }
+}
+
+/* Fallback pentru browsere mai vechi */
+.oc-toggle-all-btn,
+.oc-day-btn {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}

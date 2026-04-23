@@ -1,0 +1,870 @@
+/**
+ * Pool Product Manager - Frontend CSS
+ *
+ * @package    Membership_Validator_Core
+ * @subpackage Pool_Product_Manager
+ * @version    1.0.0
+ */
+
+/* =============================================================================
+   Container Principal și Layout
+   ============================================================================= */
+
+.oc-pool-container {
+    margin: 20px 0;
+    clear: both;
+}
+
+.oc-pool-ui {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.oc-pool-helper {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border-left: 4px solid #da171f;
+}
+
+.oc-pool-helper p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* =============================================================================
+   Selecții și Variații
+   ============================================================================= */
+
+.oc-pool-selections {
+    margin-bottom: 25px;
+}
+
+.oc-pool-selections h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Checkbox UI Style */
+.oc-pool-variations-list {
+    margin: 16px 0;
+    display: grid;
+    gap: 12px;
+}
+
+.oc-variation-item {
+    padding: 15px !important;
+    border: 1px solid #ccc !important;
+    margin-bottom: 10px !important;
+    margin-top: 0px !important;
+    border-radius: 5px;
+}
+
+
+
+.oc-variation-item input[type="checkbox"] {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0   !important;
+}
+
+.oc-variation-item label {
+    position: relative !important;
+    font-size: 14px !important;
+    padding-left: 1.8em !important;
+    line-height: 22px !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+}
+
+/* Checkbox styling - bifa neagră */
+.oc-variation-item label::before {
+    content: '';
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px    !important;
+    width: 12px !important;
+    height: 12px !important;
+    border: 2px solid #ddd !important;
+    border-radius: 3px !important;
+    background: #fff !important;
+}
+
+.oc-variation-item input[type="checkbox"]:checked + label::before {
+    background: #000 !important;
+    border-color: #000 !important;
+}
+
+.oc-variation-item input[type="checkbox"]:checked + label::after {
+    content: '\2713' !important;
+    position: absolute !important;
+    left: 4px !important;
+    top: -2px !important;
+    color: #fff !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+}
+
+/* Radio button styling - aceleași stiluri ca checkbox */
+.oc-variation-item input[type="radio"] {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.oc-variation-item input[type="radio"] + label::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    width: 12px !important;
+    height: 12px !important;
+    border: 2px solid #ddd !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+}
+
+.oc-variation-item input[type="radio"]:checked + label::before {
+    background: #000 !important;
+    border-color: #000 !important;
+}
+
+.oc-variation-item input[type="radio"]:checked + label::after {
+    content: '•' !important;
+    position: absolute !important;
+    left: 4px !important;
+    top: -2px !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+}
+
+/* Slot styling - să arate ca o listă simplă */
+.woocommerce-slot-selection-wrapper {
+    display: block !important;
+    margin: 16px 0 !important;
+}
+
+.woocommerce-slot-section {
+    display: none !important; /* Ascunde secțiunile slot */
+}
+
+.woocommerce-slot-section:first-child {
+    display: block !important; /* Arată doar primul slot */
+}
+
+.slot-options-grid {
+    display: block !important;
+    gap: 0 !important;
+}
+
+.slot-option {
+    padding: 15px !important;
+    border: 1px solid #ccc !important;
+    margin-bottom: 10px !important;
+    margin-top: 0px !important;
+    border-radius: 5px !important;
+    background: #fff !important;
+    cursor: pointer !important;
+    display: block !important;
+    min-height: auto !important;
+    text-align: left !important;
+}
+
+/* Elimină toate efectele vizuale când este selectat - doar bifa se schimbă */
+.slot-option:hover,
+.slot-option.hover,
+.slot-option.selected,
+.slot-option.active {
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.slot-option.empty-option {
+    display: none !important; /* Ascunde opțiunea empty */
+}
+
+.slot-option input[type="radio"] {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.slot-option label {
+    position: relative !important;
+    font-size: 14px !important;
+    padding-left: 1.8em !important;
+    line-height: 22px !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+
+.slot-option label::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    width: 12px !important;
+    height: 12px !important;
+    border: 2px solid #ddd !important;
+    border-radius: 3px !important;
+    background: #fff !important;
+}
+
+.slot-option input[type="radio"]:checked + label::before,
+.slot-option.selected label::before,
+.slot-option.active label::before {
+    background: #000 !important;
+    border-color: #000 !important;
+}
+
+.slot-option input[type="radio"]:checked + label::after,
+.slot-option.selected label::after,
+.slot-option.active label::after {
+    content: '\2713' !important;
+    position: absolute !important;
+    left: 4px !important;
+    top: -2px !important;
+    color: #fff !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+}
+
+
+
+
+
+
+
+
+/* Slots UI Style */
+.woocommerce-slot-selection-wrapper {
+    display: grid;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.woocommerce-slot-section h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.slot-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.slot-option {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.slot-option.empty-option {
+    background: #f9f9f9;
+    border-style: dashed;
+    color: #999;
+    font-style: italic;
+}
+
+.slot-option.empty-option:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.slot-option.empty-option.selected {
+    background: #e9e9e9;
+    border-color: #666;
+}
+
+.slot-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slot-option .variation-label {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.slot-option .variation-image-wrapper {
+    margin-bottom: 8px;
+}
+
+.slot-option .variation-thumbnail {
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 4px;
+}
+
+.slot-option .variation-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.3;
+}
+
+.slot-option.out-of-stock {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.slot-option.out-of-stock:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Radio indicator pentru slot-uri - ascuns */
+.radio-indicator {
+    display: none !important;
+}
+
+.slot-option.selected .radio-indicator,
+.slot-option.active .radio-indicator {
+    border-color: #0073aa;
+    background: #0073aa;
+}
+
+.slot-option.selected .radio-indicator::after,
+.slot-option.active .radio-indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* =============================================================================
+   Cantitate și Buton Add to Cart
+   ============================================================================= */
+
+.quantity.woocommerce-quantity {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity.woocommerce-quantity label {
+    font-weight: 600;
+    color: #333;
+}
+
+.quantity.woocommerce-quantity input.qty {
+    width: 80px;
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.quantity.woocommerce-quantity input.qty:focus {
+    border-color: #0073aa;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,115,170,0.2);
+}
+
+.single_add_to_cart_button {
+    background: #0073aa;
+    color: #fff;
+    border: 2px solid #0073aa;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.single_add_to_cart_button:hover {
+    background: #005a87;
+    border-color: #005a87;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,115,170,0.3);
+}
+
+.single_add_to_cart_button:disabled {
+    background: #ccc;
+    border-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =============================================================================
+   Prețuri și Status
+   ============================================================================= */
+
+.oc-pool-price {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.oc-pool-price .price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0073aa;
+    margin: 0;
+}
+
+.oc-pool-status {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.oc-pool-status.valid {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.oc-pool-status.invalid {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* =============================================================================
+   Stilizare pentru Elementul din Coș
+   ============================================================================= */
+
+.oc-pool-child-item {
+    display: inline-block;
+    width: 100%;
+    margin-left: 20px !important;
+    padding-left: 15px !important;
+    border-left: 3px solid #ddd !important;
+    opacity: 0.8 !important;
+    font-style: italic !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+}
+
+.oc-pool-child-item:before {
+    content: "└ " !important;
+    color: #999 !important;
+    font-weight: bold !important;
+    margin-right: 5px !important;
+    font-style: normal !important;
+}
+
+/* Pentru checkout - mai discret */
+.woocommerce-checkout .oc-pool-child-item {
+    font-size: 0.9em !important;
+    color: #666 !important;
+}
+
+/* Pentru coș */
+.woocommerce-cart .oc-pool-child-item {
+    color: #777 !important;
+    background: #fafafa !important;
+    padding: 5px 10px 5px 25px !important;
+    margin: 3px 0 !important;
+    border-radius: 3px !important;
+}
+
+/* Pentru order preview și order details */
+.order_details .oc-pool-child-item,
+.woocommerce-order .oc-pool-child-item {
+    background: #f9f9f9 !important;
+    border-left: 3px solid #0073aa !important;
+    padding: 8px 15px 8px 30px !important;
+    margin: 5px 0 !important;
+    border-radius: 4px !important;
+    display: block !important;
+}
+
+/* =============================================================================
+   Compatibility cu Elementor
+   ============================================================================= */
+
+.oc-pool-elementor .oc-pool-ui {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.oc-pool-elementor .oc-pool-price .price {
+    color: var(--e-global-color-primary, #0073aa);
+    font-family: var(--e-global-typography-primary-font-family, inherit);
+}
+
+.oc-pool-elementor .oc-variation-item {
+    border-color: var(--e-global-color-accent, #ddd);
+    background: var(--e-global-color-secondary, #f9f9f9);
+}
+
+.oc-pool-elementor .elementor-button {
+    background-color: var(--e-global-color-primary, #0073aa);
+    border-color: var(--e-global-color-primary, #0073aa);
+    color: var(--e-global-color-white, #ffffff);
+    font-family: var(--e-global-typography-accent-font-family, inherit);
+    font-size: var(--e-global-typography-accent-font-size, 16px);
+    font-weight: var(--e-global-typography-accent-font-weight, 600);
+    text-transform: var(--e-global-typography-accent-text-transform, uppercase);
+    letter-spacing: var(--e-global-typography-accent-letter-spacing, 0.1em);
+    padding: 12px 24px;
+    border-radius: var(--e-global-color-primary-border-radius, 3px);
+    transition: all 0.3s ease;
+}
+
+.oc-pool-elementor .elementor-button:hover {
+    background-color: var(--e-global-color-primary-hover, #005a87);
+    border-color: var(--e-global-color-primary-hover, #005a87);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.oc-pool-elementor .elementor-field-textual {
+    border-color: var(--e-global-color-accent, #ddd);
+    border-radius: var(--e-global-color-accent-border-radius, 3px);
+    padding: 10px 15px;
+    font-family: var(--e-global-typography-text-font-family, inherit);
+}
+
+/* =============================================================================
+   Responsive Design
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+    .slot-options-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 10px;
+    }
+    
+    .oc-pool-ui {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slot-options-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 8px;
+    }
+    
+    .woocommerce-slot-section {
+        padding: 15px;
+    }
+    
+    .slot-option {
+        padding: 12px;
+        min-height: 70px;
+    }
+    
+    .oc-variation-item {
+        padding: 12px;
+    }
+    
+    .oc-pool-price .price {
+        font-size: 24px;
+    }
+    
+    .quantity.woocommerce-quantity {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slot-options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .oc-pool-variations-list {
+        gap: 8px;
+    }
+    
+    .oc-pool-ui {
+        padding: 12px;
+        margin: 15px 0;
+    }
+    
+    .oc-pool-helper {
+        padding: 12px;
+    }
+    
+    .single_add_to_cart_button {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+    }
+    
+    .oc-pool-price .price {
+        font-size: 22px;
+    }
+    
+    .woocommerce-slot-section {
+        padding: 12px;
+    }
+    
+    .slot-option {
+        padding: 10px;
+        min-height: 60px;
+    }
+}
+
+/* =============================================================================
+   Loading States
+   ============================================================================= */
+
+.oc-pool-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0073aa;
+    border-radius: 50%;
+    animation: oc-pool-spin 1s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes oc-pool-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.oc-pool-updating {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.oc-pool-updating::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.8);
+    z-index: 10;
+}
+
+/* =============================================================================
+   Accessibility
+   ============================================================================= */
+
+.oc-pool-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .oc-variation-item,
+    .slot-option {
+        border-width: 3px;
+    }
+    
+    .oc-variation-item.selected,
+    .slot-option.selected {
+        border-color: #000;
+        background: #ffff00;
+        color: #000;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .oc-variation-item,
+    .slot-option,
+    .single_add_to_cart_button {
+        transition: none;
+    }
+    
+    .slot-option:hover,
+    .single_add_to_cart_button:hover {
+        transform: none;
+    }
+    
+    .oc-pool-loading {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .oc-pool-ui {
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+    
+    .slot-option,
+    .oc-variation-item {
+        border: 1px solid #000;
+        background: #fff;
+    }
+    
+    .slot-option.selected,
+    .oc-variation-item.selected {
+        background: #f0f0f0;
+    }
+}
+
+/* =============================================================================
+   Dual Mode Styling
+   ============================================================================= */
+
+.oc-pool-dual-mode {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.oc-pool-section {
+    margin: 0;
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.oc-pool-section:last-of-type {
+    border-bottom: none;
+}
+
+.oc-pool-section-1 {
+    background: #f8fffe;
+    border-left: 4px solid #17a2b8;
+}
+
+.oc-pool-section-2 {
+    background: #fff8f0;
+    border-left: 4px solid #fd7e14;
+}
+
+.oc-pool-section-title {
+    margin: 0 0 15px 15px !important;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+/* Forțare pentru dual mode cu specificitate maximă - CACHE CLEAR */
+.oc-pool-container.oc-pool-dual-mode .oc-pool-section-1 h4.oc-pool-section-title,
+.oc-pool-container.oc-pool-dual-mode .oc-pool-section-2 h4.oc-pool-section-title {
+    margin-left: 15px !important;
+    padding-left: 15px !important;
+    border-left: 3px solid transparent !important;
+}
+
+.oc-pool-section-1 .oc-pool-section-title {
+    color: #17a2b8;
+}
+
+.oc-pool-section-2 .oc-pool-section-title {
+    color: #fd7e14;
+}
+
+.selection-counter {
+    font-size: 12px !important;
+    color: #666 !important;
+    margin: 5px 0 !important;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.oc-pool-submit-section {
+    padding: 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.oc-pool-duplicate-warning {
+    margin: 0 0 15px 0;
+    padding: 10px 15px;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
+/* Dual mode submit button - folosește stilizarea default */
+.oc-pool-dual-mode button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Dual mode responsive adjustments */
+@media (max-width: 768px) {
+    .oc-pool-section {
+        padding: 15px;
+    }
+    
+    .oc-pool-submit-section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-pool-section {
+        padding: 10px;
+    }
+    
+    .oc-pool-section-title {
+        font-size: 16px;
+    }
+}

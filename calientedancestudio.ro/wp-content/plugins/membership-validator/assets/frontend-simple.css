@@ -1,0 +1,92 @@
+/**
+ * Frontend Simple CSS pentru Orar Cursuri
+ * Stiluri minimale pentru controalele mobile
+ */
+
+/* Controale simple pentru mobil */
+.oc-simple-controls {
+  max-width: 800px;
+  margin: 8px auto 8px auto;
+  padding: 0 12px;
+  display: block;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 8px;
+}
+
+/* Buton principal de toggle */
+.oc-toggle-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-content: center;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.oc-toggle-all-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-1px);
+}
+
+/* Badge-uri clickabile pentru zile */
+.badge[data-toggle-day] {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  position: relative;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.badge[data-toggle-day]:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Iconiță de toggle */
+.oc-day-toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* Ascunde controalele pe desktop */
+@media (min-width: 900px) {
+  .oc-simple-controls {
+    display: none !important;
+  }
+  
+  .badge[data-toggle-day] {
+    cursor: default !important;
+  }
+  
+  .oc-day-toggle-icon {
+    display: none !important;
+  }
+}
+
+/* Asigură vizibilitatea pe mobil */
+@media (max-width: 899px) {
+  .oc-simple-controls {
+    display: block !important;
+  }
+  
+  .badge[data-toggle-day] {
+    cursor: pointer !important;
+  }
+  
+  .oc-day-toggle-icon {
+    display: inline-block !important;
+  }
+}

@@ -1,0 +1,512 @@
+/**
+ * Pool Product Manager - Admin CSS
+ *
+ * @package    Membership_Validator_Core
+ * @subpackage Pool_Product_Manager
+ * @version    1.0.0
+ */
+
+/* =============================================================================
+   Setări Admin Product Edit
+   ============================================================================= */
+
+/* Container principal pentru setările pachet */
+.oc-pool-settings {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.oc-pool-settings h3 {
+    margin-top: 0;
+    color: #0073aa;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 8px;
+}
+
+/* CSS pentru admin WooCommerce - selector variații */
+#oc-pool-variations-selector {
+    margin-top: 15px;
+    clear: both;
+}
+
+#oc-pool-variations-list {
+    max-height: 400px !important;
+    overflow-y: auto !important;
+    border: 1px solid #ddd !important;
+    padding: 0 !important;
+    background: #f9f9f9 !important;
+    border-radius: 4px;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* Container intern pentru scroll */
+#oc-pool-variations-list > div {
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 15px !important;
+}
+
+/* Fiecare item de variație */
+#oc-pool-variations-list > div > div {
+    margin-bottom: 10px !important;
+    padding: 12px !important;
+    background: #fff !important;
+    border: 1px solid #e1e1e1 !important;
+    border-radius: 4px !important;
+    border-bottom: 1px solid #e1e1e1 !important;
+    height: auto !important;
+    min-height: 70px !important;
+    box-sizing: border-box !important;
+    transition: all 0.2s ease;
+}
+
+#oc-pool-variations-list > div > div:hover {
+    background: #f0f8ff !important;
+    border-color: #0073aa !important;
+    box-shadow: 0 2px 4px rgba(0,115,170,0.1);
+}
+
+#oc-pool-variations-list label {
+    display: block !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    line-height: 1.4;
+}
+
+#oc-pool-variations-list input[type="checkbox"] {
+    display: inline-block !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 10px 0 0 !important;
+    vertical-align: top !important;
+    position: relative !important;
+    top: 2px;
+    float: none !important;
+}
+
+#oc-pool-variations-list strong {
+    display: inline !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    font-size: 14px !important;
+    line-height: 1.4;
+}
+
+#oc-pool-variations-list input[type="checkbox"]:checked + strong {
+    color: #0073aa !important;
+    font-weight: bold !important;
+}
+
+#oc-pool-variations-list small {
+    display: block !important;
+    color: #666 !important;
+    margin: 5px 0 0 28px !important;
+    font-size: 12px !important;
+    line-height: 1.3;
+    padding: 0 !important;
+}
+
+#oc-pool-variations-list br {
+    display: block !important;
+    content: "" !important;
+    margin: 4px 0 !important;
+}
+
+/* Summary info */
+#oc-pool-variations-list > p {
+    margin: 10px 15px !important;
+    padding: 10px !important;
+    background: #fff !important;
+    border: 1px solid #ccd0d4 !important;
+    border-radius: 3px !important;
+    font-size: 12px !important;
+}
+
+/* Asigură vizibilitatea containerului */
+#oc-pool-variations-selector[style*="display: none"] {
+    display: block !important;
+}
+
+/* Pentru cazurile când se afișează */
+.oc-pool-settings #oc-pool-variations-selector {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* =============================================================================
+   Dashboard Admin CSS
+   ============================================================================= */
+
+/* Stats grid */
+.oc-pool-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.oc-pool-stat-card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.oc-pool-stat-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.oc-pool-stat-card h3 {
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.oc-pool-stat-card h3.color-primary {
+    color: #0073aa;
+}
+
+.oc-pool-stat-card h3.color-success {
+    color: #46b450;
+}
+
+.oc-pool-stat-card h3.color-accent {
+    color: #826eb4;
+}
+
+.oc-pool-stat-card .stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.oc-pool-stat-card .stat-number.color-primary {
+    color: #0073aa;
+}
+
+.oc-pool-stat-card .stat-number.color-success {
+    color: #46b450;
+}
+
+.oc-pool-stat-card .stat-number.color-accent {
+    color: #826eb4;
+}
+
+.oc-pool-stat-card .stat-description {
+    margin: 10px 0 0 0;
+    color: #666;
+}
+
+/* Tab system */
+.nav-tab-wrapper {
+    margin: 30px 0 20px 0;
+}
+
+.nav-tab {
+    outline: none;
+}
+
+.tab-panel {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Overview */
+.oc-pool-overview-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* Maintenance */
+.oc-pool-maintenance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.oc-pool-maintenance-grid > div {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.oc-pool-maintenance-grid > div:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.oc-pool-maintenance-grid h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0;
+}
+
+/* Help */
+.oc-pool-help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.oc-pool-help-grid code {
+    display: block;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+/* Pools report */
+.oc-pools-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.oc-pools-summary > div {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.oc-pools-summary .stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.oc-pools-summary .stat-label {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Notices */
+.notice.inline {
+    display: block;
+    margin: 15px 0;
+    padding: 12px;
+}
+
+/* Sidebar boxes */
+.oc-pool-sidebar-box {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #0073aa;
+    margin-bottom: 20px;
+}
+
+.oc-pool-sidebar-box h4 {
+    margin-top: 0;
+}
+
+.oc-pool-sidebar-box.warning {
+    background: #fff3cd;
+    border-left-color: #ffc107;
+}
+
+.oc-pool-sidebar-box.warning h4 {
+    color: #856404;
+}
+
+/* =============================================================================
+   Responsive Design
+   ============================================================================= */
+
+@media (max-width: 1200px) {
+    .oc-pool-overview-grid,
+    .oc-pool-maintenance-grid,
+    .oc-pool-help-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .oc-pool-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .oc-pools-summary {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .tab-panel {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .oc-pools-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .oc-pool-stat-card {
+        padding: 15px;
+    }
+    
+    .oc-pool-stat-card .stat-number {
+        font-size: 28px;
+    }
+}
+
+/* =============================================================================
+   Loading States
+   ============================================================================= */
+
+.oc-pool-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0073aa;
+    border-radius: 50%;
+    animation: oc-pool-spin 1s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes oc-pool-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.oc-pool-loading-text::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0073aa;
+    border-radius: 50%;
+    animation: oc-pool-spin 1s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* =============================================================================
+   Buttons și Actions
+   ============================================================================= */
+
+.oc-pool-action-buttons {
+    margin-top: 15px;
+}
+
+.oc-pool-action-buttons .button {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.button.oc-pool-primary {
+    background: #0073aa;
+    border-color: #0073aa;
+    color: #fff;
+}
+
+.button.oc-pool-primary:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+.button.oc-pool-success {
+    background: #46b450;
+    border-color: #46b450;
+    color: #fff;
+}
+
+.button.oc-pool-success:hover {
+    background: #399040;
+    border-color: #399040;
+}
+
+.button.oc-pool-warning {
+    background: #ffb900;
+    border-color: #ffb900;
+    color: #fff;
+}
+
+.button.oc-pool-warning:hover {
+    background: #e6a600;
+    border-color: #e6a600;
+}
+
+/* =============================================================================
+   Accessibility
+   ============================================================================= */
+
+.oc-pool-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus states */
+.nav-tab:focus,
+.button:focus,
+input[type="checkbox"]:focus,
+select:focus {
+    box-shadow: 0 0 0 2px #0073aa;
+    outline: none;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .oc-pool-stat-card {
+        border: 2px solid #000;
+    }
+    
+    .oc-pool-stat-card h3,
+    .oc-pool-stat-card .stat-number {
+        color: #000 !important;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .oc-pool-stat-card {
+        transition: none;
+    }
+    
+    .oc-pool-loading,
+    .oc-pool-loading-text::before {
+        animation: none;
+    }
+    
+    .oc-pool-stat-card:hover {
+        transform: none;
+    }
+}

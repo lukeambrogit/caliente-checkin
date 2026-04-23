@@ -1,0 +1,15 @@
+{
+  "name": "caliente-ws-server",
+  "version": "1.0.0",
+  "description": "WebSocket broadcast server for Caliente Dance Studio live check-in feed",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.17.0",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,0 +1,901 @@
+/**
+ * Admin styles for Orar Cursuri plugin
+ * New schedule interface with 4 rooms layout
+ */
+
+/* Main admin wrapper */
+.oc-admin-wrap {
+    margin: 20px 0;
+}
+
+.oc-admin-wrap .wp-heading-inline {
+    margin-bottom: 10px;
+}
+
+.oc-admin-wrap .description {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Section styling */
+.oc-section {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  margin: 20px 0;
+  padding: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.oc-section h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1d2327;
+  border-bottom: 1px solid #c3c4c7;
+  padding-bottom: 10px;
+}
+
+/* Schedule controls */
+.oc-schedule-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f6f7f7;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+}
+
+.oc-save-status {
+  margin-left: auto;
+  font-weight: 500;
+}
+
+.oc-save-status.success {
+  color: #00a32a;
+}
+
+.oc-save-status.error {
+  color: #d63638;
+}
+
+.oc-save-status.loading {
+  color: #646970;
+}
+
+/* Schedule table */
+.oc-schedule-table-container {
+  overflow-x: auto;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+}
+
+.oc-schedule-table {
+  width: 100%;
+  min-width: 800px;
+}
+
+.oc-schedule-table th,
+.oc-schedule-table td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.oc-schedule-table .column-weekday {
+  width: 150px;
+}
+
+.oc-schedule-table .column-start-time,
+.oc-schedule-table .column-end-time {
+  width: 120px;
+}
+
+.oc-schedule-table .column-course {
+  min-width: 200px;
+}
+
+.oc-schedule-table .column-actions {
+  width: 80px;
+  text-align: center;
+}
+
+/* Form elements */
+.oc-weekday,
+.oc-start-time,
+.oc-end-time,
+.oc-term-id {
+  width: 100%;
+  max-width: none;
+}
+
+.oc-start-time,
+.oc-end-time {
+  font-variant-numeric: tabular-nums;
+}
+
+.oc-delete-row {
+  color: #d63638;
+  border-color: #d63638;
+}
+
+.oc-delete-row:hover {
+  background: #d63638;
+  color: #fff;
+}
+
+/* Empty state */
+.oc-empty-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #646970;
+  font-style: italic;
+}
+
+/* Row states */
+.oc-schedule-row.oc-error {
+  background-color: #fef7f0;
+  border-left: 4px solid #d63638;
+}
+
+.oc-schedule-row.oc-success {
+  background-color: #f0f6fc;
+  border-left: 4px solid #00a32a;
+}
+
+/* Statistics */
+.oc-schedule-stats {
+  background: #f6f7f7;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.oc-schedule-stats h3 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #1d2327;
+}
+
+.oc-schedule-stats ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.oc-schedule-stats li {
+  padding: 2px 0;
+  color: #646970;
+}
+
+/* Color picker styling */
+.oc-color-picker {
+  width: 100px !important;
+}
+
+.wp-picker-container {
+  display: inline-block;
+}
+
+/* Image upload styling */
+.oc-image-upload {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.oc-image-url {
+  flex: 1;
+}
+
+.oc-image-preview {
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.oc-image-preview img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+}
+
+/* Preview section */
+.oc-preview-container {
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.oc-preview-tabs {
+  display: flex;
+  background: #f6f7f7;
+  border-bottom: 1px solid #c3c4c7;
+}
+
+.oc-preview-tab {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-right: 1px solid #c3c4c7;
+}
+
+.oc-preview-tab:last-child {
+  border-right: none;
+}
+
+.oc-preview-tab.active {
+  background: #fff;
+  color: #1d2327;
+  font-weight: 500;
+}
+
+.oc-preview-content {
+  position: relative;
+  min-height: 400px;
+}
+
+.oc-preview-panel {
+  display: none;
+  padding: 20px;
+}
+
+.oc-preview-panel.active {
+  display: block;
+}
+
+.oc-mobile-preview {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.oc-loading {
+  text-align: center;
+  padding: 40px;
+  color: #646970;
+}
+
+/* Preview note */
+.oc-preview-note {
+  background: #f0f6fc;
+  border: 1px solid #0073aa;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.oc-preview-note p {
+  margin: 5px 0;
+}
+
+.oc-copy-shortcode {
+  margin-left: 10px;
+  vertical-align: baseline;
+}
+
+/* Modal styling */
+.oc-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(15, 23, 42, 0.62) !important;
+  backdrop-filter: blur(3px) !important;
+  z-index: 100000 !important;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.oc-modal[style*="display: block"],
+.oc-modal[style*="display:block"],
+.oc-modal[style*="display: flex"],
+.oc-modal[style*="display:flex"] {
+  display: flex !important;
+}
+
+.oc-modal-content {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 14px !important;
+  width: min(560px, 100%) !important;
+  max-width: 100% !important;
+  max-height: min(88vh, 760px) !important;
+  overflow: hidden !important;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28) !important;
+}
+
+.oc-modal-header {
+  padding: 22px 24px 16px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.oc-modal-header h3 {
+  margin: 0 !important;
+  font-size: 20px !important;
+  line-height: 1.3 !important;
+}
+
+.oc-modal-close {
+  background: #f3f4f6 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 999px !important;
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  color: #374151 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+.oc-modal-body {
+  padding: 18px 24px 22px !important;
+  max-height: min(58vh, 520px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.oc-modal-footer {
+  padding: 16px 24px 22px !important;
+  border-top: 1px solid #e5e7eb !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  justify-content: flex-end !important;
+  box-sizing: border-box !important;
+}
+
+/* Import/Export */
+.oc-import-result {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+.oc-import-result.success {
+  background: #f0f6fc;
+  border: 1px solid #0073aa;
+  color: #1d2327;
+}
+
+.oc-import-result.error {
+  background: #fef7f0;
+  border: 1px solid #d63638;
+  color: #1d2327;
+}
+
+/* Responsive design */
+@media screen and (max-width: 782px) {
+  .oc-schedule-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .oc-save-status {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .oc-schedule-table-container {
+    font-size: 14px;
+  }
+  
+  .oc-image-upload {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .oc-preview-tabs {
+    flex-direction: column;
+  }
+  
+  .oc-preview-tab {
+    border-right: none;
+    border-bottom: 1px solid #c3c4c7;
+  }
+  
+  .oc-modal-content {
+    width: 100% !important;
+    max-height: 92vh !important;
+    border-radius: 12px !important;
+  }
+
+  .oc-modal {
+    padding: 10px !important;
+  }
+
+  .oc-modal-header,
+  .oc-modal-body,
+  .oc-modal-footer {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+/* Sortable helpers */
+.oc-schedule-table tbody .ui-sortable-helper {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.oc-schedule-table tbody .ui-sortable-placeholder {
+  background: #f6f7f7;
+  border: 2px dashed #c3c4c7;
+}
+
+/* Validation errors */
+.oc-field-error {
+  border-color: #d63638 !important;
+  box-shadow: 0 0 0 1px #d63638;
+}
+
+.oc-error-message {
+  color: #d63638;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Success animations */
+@keyframes pulse-success {
+  0% { background-color: #f0f6fc; }
+  50% { background-color: #e1f5fe; }
+  100% { background-color: #f0f6fc; }
+}
+
+.oc-success-pulse {
+  animation: pulse-success 1s ease-in-out;
+}
+
+/* Loading states */
+.oc-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.oc-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c3c4c7;
+  border-top: 2px solid #0073aa;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Accessibility improvements */
+.oc-schedule-table:focus-within {
+  outline: 2px solid #0073aa;
+  outline-offset: 2px;
+}
+
+.oc-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .oc-section {
+    border-color: #000;
+  }
+  
+  .oc-schedule-controls {
+    border-color: #000;
+  }
+  
+  .oc-schedule-table {
+    border-color: #000;
+  }
+  
+  .oc-schedule-table th,
+  .oc-schedule-table td {
+    border-color: #000;
+  }
+}
+
+/* NEW ADMIN INTERFACE - TIME SLOTS WITH SALAS */
+
+/* Admin schedule editor */
+.oc-admin-schedule-editor {
+    margin-top: 20px;
+}
+
+.oc-empty-schedule {
+    text-align: center;
+    padding: 40px;
+    background: #f9f9f9;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    color: #666;
+}
+
+/* Time slot styling */
+.oc-time-slot {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.oc-time-slot-header {
+    background: #f1f1f1;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.oc-time-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.oc-time-controls label {
+    font-weight: 600;
+    color: #23282d;
+    margin: 0;
+}
+
+.oc-time-controls input[type="time"] {
+    padding: 6px 10px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 120px;
+}
+
+.oc-delete-time-slot {
+    margin-left: auto;
+    background: #d63638 !important;
+    border-color: #d63638 !important;
+    color: #fff !important;
+}
+
+.oc-delete-time-slot:hover {
+    background: #b32d2e !important;
+    border-color: #b32d2e !important;
+}
+
+/* Admin schedule table */
+.oc-admin-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 14px;
+}
+
+.oc-admin-schedule-table th {
+    background: #23282d;
+    color: #fff;
+    padding: 12px 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    border: 1px solid #23282d;
+}
+
+.oc-admin-schedule-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.oc-admin-schedule-table .oc-col-day {
+    background: #f6f7f7;
+    font-weight: 600;
+    color: #23282d;
+    width: 120px;
+}
+
+.oc-admin-schedule-table .oc-col-room {
+    width: 200px;
+}
+
+.oc-room-select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 13px;
+    background: #fff;
+}
+
+.oc-room-select:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+/* Hover effects */
+.oc-admin-schedule-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* Additional responsive styles for new interface */
+@media screen and (max-width: 1200px) {
+    .oc-time-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .oc-time-controls > * {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .oc-delete-time-slot {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .oc-admin-schedule-table {
+        font-size: 12px;
+    }
+    
+    .oc-admin-schedule-table th,
+    .oc-admin-schedule-table td {
+        padding: 6px 4px;
+    }
+    
+    .oc-col-day {
+        width: 80px !important;
+    }
+    
+    .oc-col-room {
+        width: 140px !important;
+    }
+    
+    .oc-room-select {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+}
+
+/* ========== STRUCTURA FLEXIBILĂ ÎMBUNĂTĂȚITĂ ========== */
+
+.oc-flexible-container {
+    margin: 20px 0;
+}
+
+.oc-flexible-header {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f0f0f1;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+}
+
+.oc-flexible-header h3 {
+    margin: 0 0 10px 0;
+    color: #1d2327;
+}
+
+.oc-flexible-header p {
+    margin: 0;
+    color: #646970;
+    font-style: italic;
+}
+
+/* Day sections */
+.oc-day-section {
+    margin-bottom: 25px;
+    border: 2px solid #0073aa;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.oc-day-header {
+    background: #0073aa;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 4px 4px 0 0;
+}
+
+.oc-day-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.oc-day-controls label {
+    font-weight: bold;
+    margin: 0;
+}
+
+.oc-weekday-select {
+    padding: 8px 12px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background: #fff;
+    color: #0073aa;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.oc-add-hour,
+.oc-remove-day {
+    padding: 8px 15px !important;
+    border-radius: 4px !important;
+    font-weight: bold !important;
+}
+
+.oc-add-hour {
+    background: #00a32a !important;
+    border-color: #00a32a !important;
+    color: #fff !important;
+}
+
+.oc-add-hour:hover {
+    background: #008a20 !important;
+    border-color: #008a20 !important;
+}
+
+.oc-remove-day {
+    background: #d63638 !important;
+    border-color: #d63638 !important;
+    color: #fff !important;
+}
+
+.oc-remove-day:hover {
+    background: #b32d2e !important;
+    border-color: #b32d2e !important;
+}
+
+/* Hours container */
+.oc-hours-container {
+    padding: 20px;
+}
+
+/* Hour rows */
+.oc-hour-row {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.oc-hour-controls {
+    display: grid;
+    grid-template-columns: auto 120px auto 1fr auto 1fr auto 1fr auto 1fr auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.oc-hour-controls label {
+    font-weight: bold;
+    color: #1d2327;
+    white-space: nowrap;
+}
+
+.oc-time-select,
+.oc-room-select {
+    padding: 8px 10px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.oc-time-select {
+    min-width: 120px;
+    font-weight: bold;
+    color: #0073aa;
+}
+
+.oc-room-select {
+    min-width: 180px;
+}
+
+.oc-remove-hour {
+    padding: 8px 10px !important;
+    background: #d63638 !important;
+    border-color: #d63638 !important;
+    color: #fff !important;
+    border-radius: 4px !important;
+    white-space: nowrap;
+}
+
+.oc-remove-hour:hover {
+    background: #b32d2e !important;
+    border-color: #b32d2e !important;
+}
+
+/* Add day section */
+.oc-add-day-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.oc-add-day-btn {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    background: #0073aa !important;
+    border-color: #0073aa !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+}
+
+.oc-add-day-btn:hover {
+    background: #005a87 !important;
+    border-color: #005a87 !important;
+}
+
+.oc-add-day-btn .dashicons {
+    margin-right: 5px;
+}
+
+/* Responsive pentru mobile */
+@media (max-width: 782px) {
+    .oc-hour-controls {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .oc-day-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .oc-weekday-select {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .oc-hour-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .oc-hour-controls label {
+        align-self: flex-start;
+    }
+}

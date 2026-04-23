@@ -1,0 +1,362 @@
+/**
+ * Membership Manager - Extracted CSS
+ * CSS static extras din inline pentru performanță și mentenabilitate
+ * 
+ * @package MembershipValidator
+ * @since 2.1.0
+ */
+
+/* ========================================
+   TABLE CONTAINER & LAYOUT
+   ======================================== */
+
+.oc-admin-table-container {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.oc-table-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    margin-left: 20px;
+}
+
+.oc-table-header h2 {
+    margin: 0 0 15px 0;
+    color: #1d2327;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.oc-admin-table-container .oc-table-header .oc-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    line-height: 1.2;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #d0d7de !important;
+    background: #f6f8fa !important;
+    color: #1f2328 !important;
+    opacity: 0.55 !important;
+    transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.oc-admin-table-container .oc-table-header .oc-badge-pending {
+    background: #e6f0ff !important;
+    border-color: #b6ccff !important;
+    color: #003e9f !important;
+}
+
+.oc-admin-table-container .oc-table-header .oc-badge-active {
+    background: #e8f7ee !important;
+    border-color: #b8e4c8 !important;
+    color: #116329 !important;
+}
+
+.oc-admin-table-container .oc-table-header .oc-badge-expired {
+    background: #fdecec !important;
+    border-color: #f2bcbc !important;
+    color: #9f1f1f !important;
+}
+
+.oc-admin-table-container .oc-table-header .oc-badge-selected {
+    opacity: 1 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: none !important;
+}
+
+.oc-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.oc-search-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.oc-search-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.oc-search-input {
+    flex: 1;
+    max-width: 400px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Emoji albe in butoane pentru contrast */
+.button.button-primary .emoji,
+.button.button-primary img.emoji {
+    filter: brightness(0) invert(1);
+}
+
+/* ========================================
+   CARDS GRID
+   ======================================== */
+
+.oc-admin-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.oc-admin-card {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.oc-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+
+.oc-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.oc-pagination-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 10px;
+    border-top: 1px solid #e1e1e1;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.oc-pagination-stats {
+    color: #666;
+    font-size: 14px;
+}
+
+.oc-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.oc-pagination-controls ul {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.oc-pagination-controls ul li {
+    display: inline-block;
+    margin: 0;
+}
+
+.oc-page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.oc-page-link,
+.oc-pagination-controls ul li a,
+.oc-pagination-controls ul li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #2271b1;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.oc-page-link:hover,
+.oc-pagination-controls ul li a:hover {
+    background: #f0f0f1;
+    border-color: #2271b1;
+    color: #135e96;
+}
+
+.oc-page-link.current,
+.oc-pagination-controls ul li span.current {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.oc-page-prev,
+.oc-page-next,
+.oc-pagination-controls ul li.prev a,
+.oc-pagination-controls ul li.next a {
+    font-weight: 500;
+}
+
+.oc-page-dots,
+.oc-pagination-controls ul li span.dots {
+    padding: 0 8px;
+    color: #666;
+}
+
+/* ========================================
+   VALIDATION MODAL
+   ======================================== */
+
+.oc-validation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    animation: fadeIn 0.2s ease-in;
+}
+
+.oc-validation-modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    max-width: 500px;
+    text-align: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+.oc-validation-modal-content.success {
+    border-top: 5px solid #46b450;
+}
+
+.oc-validation-modal-content.error {
+    border-top: 5px solid #dc3232;
+}
+
+.oc-validation-modal-content.loading {
+    border-top: 5px solid #0073aa;
+}
+
+.oc-validation-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.oc-validation-message {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.oc-validation-close {
+    margin: 0 auto;
+    padding: 10px 30px !important;
+    font-size: 16px !important;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   SPINNER
+   ======================================== */
+
+.oc-spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .oc-pagination-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .oc-pagination-controls {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .oc-page-prev,
+    .oc-page-next {
+        flex: 0 0 auto;
+    }
+    
+    .oc-page-numbers {
+        flex: 1;
+        justify-content: center;
+    }
+}
+

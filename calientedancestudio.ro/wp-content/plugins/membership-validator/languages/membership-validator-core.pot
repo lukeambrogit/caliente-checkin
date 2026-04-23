@@ -1,0 +1,62 @@
+# Copyright (C) 2025 Membership Validator Core
+# This file is distributed under the same license as the Membership Validator Core package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Membership Validator Core 2.0.0\n"
+"Report-Msgid-Bugs-To: https://example.com/support\n"
+"POT-Creation-Date: 2025-01-01 12:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"X-Generator: WordPress\n"
+"X-Domain: membership-validator-core\n"
+
+#: orar-cursuri.php:89
+msgid "Orar Cursuri necesită %s pentru a funcționa. Te rugăm să instalezi și să activezi WooCommerce."
+msgstr ""
+
+#: orar-cursuri.php:112
+msgid "Orar Cursuri necesită WooCommerce pentru a funcționa."
+msgstr ""
+
+#: orar-cursuri.php:113
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: includes/class-oc-admin.php:45
+#: includes/class-oc-admin.php:52
+msgid "Orar Cursuri"
+msgstr ""
+
+#: includes/class-oc-admin.php:53
+msgid "Editare Orar"
+msgstr ""
+
+#: includes/class-oc-admin.php:62
+msgid "Setări Aspect"
+msgstr ""
+
+#: includes/class-oc-frontend.php:145
+msgid "Nu există un orar disponibil în acest moment."
+msgstr ""
+
+#: templates/admin-page.php:15
+msgid "Editare Orar Cursuri"
+msgstr ""
+
+#: templates/admin-page.php:18
+msgid "Configurează orarul cursurilor bazat pe atributele WooCommerce. Selectează mai întâi atributul părinte, apoi adaugă rândurile de orar."
+msgstr ""
+
+#: templates/style-settings-page.php:15
+msgid "Setări Aspect - Orar Cursuri"
+msgstr ""
+
+#: templates/style-settings-page.php:18
+msgid "Personalizează aspectul orarului cu culori, fonturi și imagini de fundal. Modificările vor fi reflectate automat pe frontend."
+msgstr ""
