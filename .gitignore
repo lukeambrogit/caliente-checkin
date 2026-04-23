@@ -1,0 +1,51 @@
+# WordPress core — ignorăm tot, păstrăm doar plugin-ul nostru
+calientedancestudio.ro/wp-admin/
+calientedancestudio.ro/wp-includes/
+calientedancestudio.ro/wp-content/uploads/
+calientedancestudio.ro/wp-content/themes/
+calientedancestudio.ro/wp-content/cache/
+calientedancestudio.ro/wp-content/upgrade/
+calientedancestudio.ro/wp-content/plugins/*/
+!calientedancestudio.ro/wp-content/plugins/membership-validator/
+calientedancestudio.ro/wp-config.php
+calientedancestudio.ro/wp-config-sample.php
+calientedancestudio.ro/*.sql
+calientedancestudio.ro/*.php
+calientedancestudio.ro/*.html
+calientedancestudio.ro/*.txt
+calientedancestudio.ro/.htaccess
+calientedancestudio.ro/.user.ini
+calientedancestudio.ro/error_log
+calientedancestudio.ro/php.ini
+calientedancestudio.ro/checkout-name-debug.log
+
+# WordPress wp-content — ignorăm tot ce nu e plugin-ul nostru
+calientedancestudio.ro/wp-content/backuply/
+calientedancestudio.ro/wp-content/languages/
+calientedancestudio.ro/wp-content/litespeed/
+calientedancestudio.ro/wp-content/mu-plugins/
+calientedancestudio.ro/wp-content/webtoffee_export/
+calientedancestudio.ro/wp-content/.litespeed_conf.dat
+calientedancestudio.ro/wp-content/maintenance.php
+
+# Build-uri și dependențe generate
+caliente_web_ui/build/
+caliente_web_ui/node_modules/
+caliente_ws_server/node_modules/
+caliente_ws_server/package-lock.json
+
+# Fișiere cu secrete — NICIODATĂ în git
+.env
+caliente_web_ui/.env
+caliente_web_ui/.env.local
+caliente_web_ui/.env.production
+caliente_ws_server/.env
+
+# Assets React generate din build
+calientedancestudio.ro/wp-content/plugins/membership-validator/assets/react-checkin/
+
+# Diverse
+*.log
+.DS_Store
+Thumbs.db
+index.php
